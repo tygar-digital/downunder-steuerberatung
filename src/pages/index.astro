@@ -1,0 +1,77 @@
+---
+import '../styles/global.css';
+import Hero from '../components/Hero.astro';
+---
+
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DownUnder Steuerberatung — Farbpaletten Vergleich</title>
+  </head>
+  <body class="bg-neutral-950">
+
+    <!-- Page Header -->
+    <header class="text-center py-12 px-5">
+      <h1 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-3" style="font-family: 'Space Grotesk'">
+        Farbpaletten Vergleich
+      </h1>
+      <p class="text-neutral-400 text-sm max-w-lg mx-auto">
+        4 Varianten für DownUnder Steuerberatung — gleiches Layout, gleiche Fonts, nur die Farben ändern sich.
+        2 Basic + 2 Special (mit Twist).
+      </p>
+    </header>
+
+    <!-- Variant 1: Deep Trust -->
+    <div class="max-w-6xl mx-auto mb-12 rounded-2xl overflow-hidden shadow-2xl mx-5 lg:mx-auto">
+      <Hero
+        paletteName="palette-deep-trust"
+        paletteLabel="Variante 1 — Deep Trust"
+        paletteDescription="Basic: Navy + Teal. Vertrauen & Professionalität."
+      />
+    </div>
+
+    <!-- Variant 2: Clean Slate -->
+    <div class="max-w-6xl mx-auto mb-12 rounded-2xl overflow-hidden shadow-2xl mx-5 lg:mx-auto">
+      <Hero
+        paletteName="palette-clean-slate"
+        paletteLabel="Variante 2 — Clean Slate"
+        paletteDescription="Basic: Slate + Electric Blue. Modern & digital."
+      />
+    </div>
+
+    <!-- Section Divider -->
+    <div class="max-w-xs mx-auto my-8 flex items-center gap-4">
+      <div class="flex-1 h-px bg-neutral-700"></div>
+      <span class="text-neutral-500 text-xs font-mono uppercase tracking-widest">Special</span>
+      <div class="flex-1 h-px bg-neutral-700"></div>
+    </div>
+
+    <!-- Variant 3: Red Earth -->
+    <div class="max-w-6xl mx-auto mb-12 rounded-2xl overflow-hidden shadow-2xl mx-5 lg:mx-auto">
+      <Hero
+        paletteName="palette-red-earth"
+        paletteLabel="Variante 3 — Red Earth"
+        paletteDescription="Special: Terracotta + Sage. Australisches Landschaftsgefühl ohne Klischees."
+      />
+    </div>
+
+    <!-- Variant 4: Dusk Bridge -->
+    <div class="max-w-6xl mx-auto mb-12 rounded-2xl overflow-hidden shadow-2xl mx-5 lg:mx-auto">
+      <Hero
+        paletteName="palette-dusk-bridge"
+        paletteLabel="Variante 4 — Dusk Bridge"
+        paletteDescription="Special: Indigo + Golden Amber. Deutsch-australische Licht-Fusion."
+      />
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-12 px-5">
+      <p class="text-neutral-600 text-xs">
+        Fonts: Space Grotesk (Headlines) + Inter (Body) — identisch über alle Varianten.
+      </p>
+    </footer>
+
+  </body>
+</html>
