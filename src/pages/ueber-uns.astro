@@ -1,0 +1,185 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const team = [
+  {
+    name: 'Josh',
+    role: 'Co-Founder',
+    initials: 'J',
+    color: 'var(--color-primary)',
+    description: 'Studium in Finance/Banking in Deutschland. Nach der Auswanderung nach Australien die Komplexität des australischen Steuersystems am eigenen Leib erfahren. Gründete DownUnder, um anderen Deutschen den Weg zu erleichtern.',
+  },
+  {
+    name: 'Tim',
+    role: 'Co-Founder',
+    initials: 'T',
+    color: 'var(--color-primary-container)',
+    description: 'Background in Banking und Finanzwesen. Als deutscher Expat in Australien die Herausforderungen der grenzüberschreitenden Besteuerung selbst gemeistert. Bringt praktische Erfahrung und Fachwissen zusammen.',
+  },
+];
+
+const differentiators = [
+  {
+    title: 'Eigene Erfahrung',
+    description: 'Wir kennen die Herausforderungen als deutsche Expats in Australien aus erster Hand.',
+  },
+  {
+    title: 'Finance-Expertise',
+    description: 'Fundiertes Fachwissen aus Banking und Finanzwesen als Grundlage unserer Beratung.',
+  },
+  {
+    title: '100% Digital',
+    description: 'Komplett digitaler Prozess — egal ob du in Sydney, Melbourne oder im Outback bist.',
+  },
+];
+
+const certifications = [
+  'Finance Background',
+  'Deutsche Muttersprachler',
+  'GDPR Konform',
+  'Digitaler Prozess',
+];
+---
+
+<BaseLayout
+  title="Über uns"
+  description="Lernen Sie das Team von DownUnder Steuerberatung kennen — gegründet von deutschen Expats mit Finance-Background, für Deutsche in Australien."
+>
+
+  <!-- Hero -->
+  <section class="relative py-20 md:py-28 overflow-hidden" style="background: var(--gradient-hero);">
+    <div class="absolute inset-0 opacity-[0.04]" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+    <div class="relative mx-auto max-w-7xl px-5 sm:px-8">
+      <p
+        class="text-sm font-semibold uppercase tracking-widest mb-4"
+        style="color: var(--color-secondary-container); font-family: var(--font-display);"
+      >
+        Über uns
+      </p>
+      <h1 class="text-white max-w-3xl">
+        Die Brücke zwischen zwei Steuerwelten
+      </h1>
+      <p class="mt-5 text-lg max-w-2xl leading-relaxed" style="color: var(--color-primary-fixed-dim);">
+        Gegründet von deutschen Expats mit Finance-Background — für Deutsche in Australien.
+      </p>
+    </div>
+  </section>
+
+  <!-- Story -->
+  <section class="py-20 md:py-28" style="background-color: var(--color-background);">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8">
+      <div class="max-w-3xl">
+        <h2 class="mb-8">Unsere Geschichte</h2>
+        <p class="text-lg leading-relaxed mb-6" style="color: var(--color-on-surface-variant);">
+          DownUnder Steuerberatung wurde aus eigener Erfahrung geboren. Als wir selbst als Deutsche nach Australien ausgewandert sind, haben wir schnell gemerkt: Das australische Steuersystem ist komplex, die Informationen auf Deutsch kaum vorhanden, und professionelle Hilfe schwer zu finden.
+        </p>
+        <p class="text-lg leading-relaxed" style="color: var(--color-on-surface-variant);">
+          Mit unserem Background in Finance und Banking haben wir beschlossen, genau diese Lücke zu schließen. Wir bieten die Hilfe, die wir uns damals selbst gewünscht hätten — verständlich, digital und auf Deutsch.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Differentiators -->
+  <section class="py-20 md:py-28" style="background-color: var(--color-surface-low);">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {differentiators.map((item) => (
+          <div
+            class="p-8 md:p-10 rounded-[var(--radius-lg)]"
+            style="background-color: var(--color-surface-lowest);"
+          >
+            <h3 class="text-xl mb-3" style="font-family: var(--font-display);">{item.title}</h3>
+            <p class="leading-relaxed" style="color: var(--color-on-surface-variant);">
+              {item.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="py-20 md:py-28" style="background-color: var(--color-background);">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8">
+      <h2 class="mb-12 md:mb-16">Die Gründer</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
+        {team.map((member) => (
+          <div
+            class="p-8 md:p-10 rounded-[var(--radius-lg)]"
+            style="background-color: var(--color-surface-lowest);"
+          >
+            <!-- Avatar -->
+            <div
+              class="w-16 h-16 rounded-full flex items-center justify-center text-xl font-bold text-white mb-6"
+              style={`background-color: ${member.color};`}
+            >
+              {member.initials}
+            </div>
+            <h3 class="text-xl mb-1" style="font-family: var(--font-display);">
+              {member.name}
+            </h3>
+            <p
+              class="text-sm font-medium mb-4"
+              style="color: var(--color-primary-container);"
+            >
+              {member.role}
+            </p>
+            <p class="leading-relaxed" style="color: var(--color-on-surface-variant);">
+              {member.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section class="py-20 md:py-28" style="background-color: var(--color-surface-low);">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8">
+      <h2 class="mb-12 text-center">Unsere Standards</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl mx-auto">
+        {certifications.map((cert) => (
+          <div
+            class="flex flex-col items-center text-center p-6 md:p-8 rounded-[var(--radius-lg)]"
+            style="background-color: var(--color-surface-lowest);"
+          >
+            <!-- Badge Icon -->
+            <div
+              class="w-12 h-12 rounded-full flex items-center justify-center mb-4"
+              style="background-color: var(--color-primary-fixed);"
+            >
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 1L12.47 6.6L18.5 7.25L14 11.39L15.18 17.5L10 14.49L4.82 17.5L6 11.39L1.5 7.25L7.53 6.6L10 1Z" fill="var(--color-primary)" opacity="0.8"/>
+              </svg>
+            </div>
+            <p class="text-sm font-semibold leading-snug" style="font-family: var(--font-display); color: var(--color-on-surface);">
+              {cert}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 md:py-28" style="background: var(--gradient-hero);">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8 text-center">
+      <h2 class="text-white mb-4">Lerne uns kennen</h2>
+      <p class="text-lg max-w-xl mx-auto mb-10 leading-relaxed" style="color: var(--color-primary-fixed-dim);">
+        Vereinbare ein unverbindliches Erstgespräch mit unserem Team.
+      </p>
+      <a
+        href="/kontakt"
+        class="inline-flex items-center gap-2 px-8 py-4 rounded-[var(--radius-xl)] text-base font-semibold transition-all duration-200 hover:shadow-[var(--shadow-elevated)]"
+        style="background: var(--color-secondary-container); color: var(--color-on-secondary-container);"
+      >
+        Termin vereinbaren
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3.33 8H12.67M12.67 8L8.67 4M12.67 8L8.67 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>

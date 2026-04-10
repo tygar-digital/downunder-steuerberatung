@@ -1,0 +1,378 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const topics = [
+  'Steuererklärung',
+  'Superannuation',
+  'TFN / ABN',
+  'Beratung',
+  'Sonstiges',
+];
+
+const offices = [
+  {
+    city: 'Sydney',
+    address: '120 Pitt Street, Sydney, NSW 2000, Australien',
+  },
+  {
+    city: 'Berlin',
+    address: 'Friedrichstraße 100, 10117 Berlin, Deutschland',
+  },
+];
+---
+
+<BaseLayout
+  title="Kontakt"
+  description="Kontaktieren Sie DownUnder Steuerberatung — wir antworten innerhalb von 24 Stunden. Beratung für Deutsche in Australien."
+>
+
+  <!-- Hero -->
+  <section class="relative py-20 md:py-28 overflow-hidden" style="background: var(--gradient-hero);">
+    <div class="absolute inset-0 opacity-[0.04]" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+    <div class="relative mx-auto max-w-7xl px-5 sm:px-8">
+      <p
+        class="text-sm font-semibold uppercase tracking-widest mb-4"
+        style="color: var(--color-secondary-container); font-family: var(--font-display);"
+      >
+        Kontakt
+      </p>
+      <h1 class="text-white max-w-3xl">
+        Wir freuen uns auf deine Nachricht
+      </h1>
+      <p class="mt-5 text-lg max-w-2xl leading-relaxed" style="color: var(--color-primary-fixed-dim);">
+        Ob Frage, Anliegen oder Erstberatung — wir antworten innerhalb von 24 Stunden.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="py-20 md:py-28" style="background-color: var(--color-background);">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
+
+        <!-- Left: Contact Form (3 cols) -->
+        <div class="lg:col-span-3">
+          <div class="p-8 md:p-10 rounded-[var(--radius-lg)]" style="background-color: var(--color-surface-lowest);">
+            <form class="space-y-6" id="contact-form">
+              <!-- Name -->
+              <div>
+                <label
+                  for="name"
+                  class="block text-sm font-semibold mb-2"
+                  style="font-family: var(--font-display); color: var(--color-on-surface);"
+                >
+                  Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  class="w-full px-4 py-3 rounded-[var(--radius-md)] text-base outline-none transition-all duration-200"
+                  style="background-color: var(--color-surface-highest); color: var(--color-on-surface); border: 2px solid transparent; font-family: var(--font-body);"
+                  placeholder="Dein vollständiger Name"
+                />
+              </div>
+
+              <!-- Email -->
+              <div>
+                <label
+                  for="email"
+                  class="block text-sm font-semibold mb-2"
+                  style="font-family: var(--font-display); color: var(--color-on-surface);"
+                >
+                  E-Mail
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  class="w-full px-4 py-3 rounded-[var(--radius-md)] text-base outline-none transition-all duration-200"
+                  style="background-color: var(--color-surface-highest); color: var(--color-on-surface); border: 2px solid transparent; font-family: var(--font-body);"
+                  placeholder="deine@email.com"
+                />
+              </div>
+
+              <!-- TFN -->
+              <div>
+                <label
+                  for="tfn"
+                  class="block text-sm font-semibold mb-2"
+                  style="font-family: var(--font-display); color: var(--color-on-surface);"
+                >
+                  TFN (Tax File Number)
+                  <span class="font-normal" style="color: var(--color-outline);">— optional</span>
+                </label>
+                <input
+                  type="text"
+                  id="tfn"
+                  name="tfn"
+                  pattern="\d{9}"
+                  inputmode="numeric"
+                  maxlength="9"
+                  class="w-full px-4 py-3 rounded-[var(--radius-md)] text-base outline-none transition-all duration-200"
+                  style="background-color: var(--color-surface-highest); color: var(--color-on-surface); border: 2px solid transparent; font-family: var(--font-body);"
+                  placeholder="Deine Tax File Number (optional)"
+                />
+              </div>
+
+              <!-- Topic -->
+              <div>
+                <label
+                  for="topic"
+                  class="block text-sm font-semibold mb-2"
+                  style="font-family: var(--font-display); color: var(--color-on-surface);"
+                >
+                  Thema
+                </label>
+                <select
+                  id="topic"
+                  name="topic"
+                  required
+                  class="w-full px-4 py-3 rounded-[var(--radius-md)] text-base outline-none transition-all duration-200 appearance-none cursor-pointer"
+                  style="background-color: var(--color-surface-highest); color: var(--color-on-surface); border: 2px solid transparent; font-family: var(--font-body); background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2216%22 height=%2216%22 viewBox=%220 0 16 16%22 fill=%22none%22><path d=%22M4 6L8 10L12 6%22 stroke=%22%2343474F%22 stroke-width=%221.5%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/></svg>'); background-repeat: no-repeat; background-position: right 16px center;"
+                >
+                  <option value="" disabled selected>Bitte wählen</option>
+                  {topics.map((topic) => (
+                    <option value={topic}>{topic}</option>
+                  ))}
+                </select>
+              </div>
+
+              <!-- Message -->
+              <div>
+                <label
+                  for="message"
+                  class="block text-sm font-semibold mb-2"
+                  style="font-family: var(--font-display); color: var(--color-on-surface);"
+                >
+                  Nachricht
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                  class="w-full px-4 py-3 rounded-[var(--radius-md)] text-base outline-none transition-all duration-200 resize-y"
+                  style="background-color: var(--color-surface-highest); color: var(--color-on-surface); border: 2px solid transparent; font-family: var(--font-body);"
+                  placeholder="Wie können wir dir helfen?"
+                ></textarea>
+              </div>
+
+              <!-- Submit -->
+              <button
+                type="submit"
+                class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-[var(--radius-xl)] text-base font-semibold transition-all duration-200 hover:shadow-[var(--shadow-float)] cursor-pointer"
+                style="background: var(--color-secondary-container); color: var(--color-on-secondary-container);"
+              >
+                Nachricht senden
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14 2L7 9M14 2L10 14L7 9M14 2L2 6L7 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+
+              <p class="text-xs" style="color: var(--color-on-surface-variant);">
+                Wir antworten in der Regel innerhalb von 24 Stunden an Werktagen.
+              </p>
+            </form>
+          </div>
+        </div>
+
+        <!-- Right: Direct Contact (2 cols) -->
+        <div class="lg:col-span-2 space-y-6">
+          <!-- Contact Options -->
+          <div class="p-8 rounded-[var(--radius-lg)]" style="background-color: var(--color-surface-lowest);">
+            <h3 class="text-lg mb-6" style="font-family: var(--font-display);">Direkt erreichen</h3>
+            <div class="space-y-5">
+              <!-- Email -->
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-10 h-10 shrink-0 rounded-[var(--radius-md)] flex items-center justify-center"
+                  style="background-color: var(--color-primary-fixed);"
+                >
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="4" width="14" height="10" rx="2" stroke="var(--color-primary)" stroke-width="1.5"/>
+                    <path d="M2 6L9 10.5L16 6" stroke="var(--color-primary)" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold mb-0.5" style="font-family: var(--font-display); color: var(--color-on-surface);">E-Mail</p>
+                  <a
+                    href="mailto:hello@downunder-steuerberatung.com"
+                    class="text-sm break-all"
+                    style="color: var(--color-primary-container);"
+                  >
+                    hello@downunder-steuerberatung.com
+                  </a>
+                </div>
+              </div>
+
+              <!-- WhatsApp -->
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-10 h-10 shrink-0 rounded-[var(--radius-md)] flex items-center justify-center"
+                  style="background-color: var(--color-primary-fixed);"
+                >
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 8.5C15 12.09 12.09 15 8.5 15C7.36 15 6.29 14.71 5.36 14.2L3 15L3.8 12.64C3.29 11.71 3 10.64 3 9.5C3 5.91 5.91 3 9.5 3C13.09 3 16 5.91 16 9.5" stroke="var(--color-primary)" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M7 8.5H11M7 10.5H10" stroke="var(--color-primary)" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold mb-0.5" style="font-family: var(--font-display); color: var(--color-on-surface);">WhatsApp</p>
+                  <a
+                    href="https://wa.me/61290000000"
+                    class="text-sm"
+                    style="color: var(--color-primary-container);"
+                  >
+                    +61 2 9000 0000
+                  </a>
+                </div>
+              </div>
+
+              <!-- Office Hours -->
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-10 h-10 shrink-0 rounded-[var(--radius-md)] flex items-center justify-center"
+                  style="background-color: var(--color-primary-fixed);"
+                >
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="9" cy="9" r="7" stroke="var(--color-primary)" stroke-width="1.5"/>
+                    <path d="M9 5.5V9L11.5 10.5" stroke="var(--color-primary)" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold mb-0.5" style="font-family: var(--font-display); color: var(--color-on-surface);">Telefonzeiten</p>
+                  <p class="text-sm" style="color: var(--color-on-surface-variant);">
+                    Mo–Fr, 9:00–17:00 (AEST)
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Response Time -->
+          <div class="p-8 rounded-[var(--radius-lg)]" style="background-color: var(--color-surface-lowest);">
+            <div class="flex items-start gap-4">
+              <div
+                class="w-10 h-10 shrink-0 rounded-full flex items-center justify-center"
+                style="background-color: var(--color-primary-fixed);"
+              >
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6.5 9L8.5 11L12 7" stroke="var(--color-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="9" cy="9" r="7" stroke="var(--color-primary)" stroke-width="1.5"/>
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm font-semibold mb-1" style="font-family: var(--font-display); color: var(--color-on-surface);">Antwortgarantie</p>
+                <p class="text-sm leading-relaxed" style="color: var(--color-on-surface-variant);">
+                  Wir antworten garantiert innerhalb von 24 Stunden an Werktagen.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Offices -->
+  <section class="py-20 md:py-28" style="background-color: var(--color-surface-low);">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8">
+      <h2 class="mb-12">Unsere Standorte</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {offices.map((office) => (
+          <div
+            class="rounded-[var(--radius-lg)] overflow-hidden"
+            style="background-color: var(--color-surface-lowest);"
+          >
+            <!-- Map Placeholder -->
+            <div
+              class="h-48 flex items-center justify-center"
+              style="background-color: var(--color-surface-container);"
+            >
+              <div class="text-center">
+                <svg class="mx-auto mb-2" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14 3C9.58 3 6 6.58 6 11C6 17.25 14 25 14 25C14 25 22 17.25 22 11C22 6.58 18.42 3 14 3Z" stroke="var(--color-outline)" stroke-width="1.5"/>
+                  <circle cx="14" cy="11" r="3" stroke="var(--color-outline)" stroke-width="1.5"/>
+                </svg>
+                <p class="text-xs font-medium" style="color: var(--color-outline);">Kartenansicht</p>
+              </div>
+            </div>
+            <div class="p-6 md:p-8">
+              <h3 class="text-xl mb-2" style="font-family: var(--font-display);">{office.city}</h3>
+              <p class="text-sm leading-relaxed" style="color: var(--color-on-surface-variant);">
+                {office.address}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 md:py-28" style="background: var(--gradient-hero);">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8 text-center">
+      <h2 class="text-white mb-4">Lieber direkt sprechen?</h2>
+      <p class="text-lg max-w-xl mx-auto mb-10 leading-relaxed" style="color: var(--color-primary-fixed-dim);">
+        Vereinbare ein kostenloses Erstgespräch per Video-Call.
+      </p>
+      <a
+        href="/kontakt"
+        class="inline-flex items-center gap-2 px-8 py-4 rounded-[var(--radius-xl)] text-base font-semibold transition-all duration-200 hover:shadow-[var(--shadow-elevated)]"
+        style="background: var(--color-secondary-container); color: var(--color-on-secondary-container);"
+      >
+        Video-Call buchen
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3.33 8H12.67M12.67 8L8.67 4M12.67 8L8.67 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  input:focus,
+  select:focus,
+  textarea:focus {
+    border-color: var(--color-primary-container) !important;
+    box-shadow: 0 0 0 1px var(--color-primary-container);
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--color-outline);
+  }
+</style>
+
+<script>
+  // Simple form submission handler
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+    const originalText = btn.innerHTML;
+
+    btn.innerHTML = `
+      <span>Nachricht gesendet!</span>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3.33 8L6.67 11.33L12.67 5.33" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    `;
+    btn.style.opacity = '0.8';
+    btn.disabled = true;
+
+    setTimeout(() => {
+      btn.innerHTML = originalText;
+      btn.style.opacity = '1';
+      btn.disabled = false;
+      form.reset();
+    }, 3000);
+  });
+</script>

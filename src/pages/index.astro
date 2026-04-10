@@ -1,77 +1,469 @@
 ---
-import '../styles/global.css';
-import Hero from '../components/Hero.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<html lang="de">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>DownUnder Steuerberatung — Farbpaletten Vergleich</title>
-  </head>
-  <body class="bg-neutral-950">
+<BaseLayout title="Steuerberatung für Deutsche in Australien">
 
-    <!-- Page Header -->
-    <header class="text-center py-12 px-5">
-      <h1 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-3" style="font-family: 'Space Grotesk'">
-        Farbpaletten Vergleich
-      </h1>
-      <p class="text-neutral-400 text-sm max-w-lg mx-auto">
-        4 Varianten für DownUnder Steuerberatung — gleiches Layout, gleiche Fonts, nur die Farben ändern sich.
-        2 Basic + 2 Special (mit Twist).
+  <!-- ═══════════ HERO ═══════════ -->
+  <section class="relative overflow-hidden" style="background: var(--gradient-hero);">
+    <!-- Subtle decorative shapes -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+      <div class="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full opacity-[0.04]" style="background: white;"></div>
+      <div class="absolute bottom-0 left-0 w-[300px] h-[300px] rounded-full opacity-[0.03]" style="background: white; transform: translate(-30%, 40%);"></div>
+    </div>
+
+    <div class="relative mx-auto max-w-7xl px-5 sm:px-8 pt-20 pb-20 md:pt-28 md:pb-28 lg:pt-36 lg:pb-32">
+      <div class="max-w-3xl">
+        <h1 class="text-white mb-6" style="font-family: var(--font-display);">
+          Deine Steuererklärung in Australien — auf Deutsch, ohne Stress.
+        </h1>
+        <p class="text-lg md:text-xl leading-relaxed mb-10 max-w-2xl" style="color: rgba(255,255,255,0.82); font-family: var(--font-body);">
+          Wir sind spezialisiert auf Steuererklärungen und Beratung für Deutsche in Australien. Professionell, verständlich, 100% digital.
+        </p>
+
+        <!-- CTAs -->
+        <div class="flex flex-col sm:flex-row gap-4 mb-14">
+          <a
+            href="/kontakt"
+            class="inline-flex items-center justify-center px-7 py-3.5 rounded-[var(--radius-xl)] text-base font-semibold transition-all duration-200 hover:brightness-105 hover:shadow-lg"
+            style="background-color: var(--color-secondary-container); color: var(--color-on-secondary-container);"
+          >
+            Jetzt Beratung anfragen
+          </a>
+          <a
+            href="#prozess"
+            class="inline-flex items-center justify-center px-7 py-3.5 rounded-[var(--radius-xl)] text-base font-semibold transition-all duration-200 hover:bg-white/10"
+            style="border: 1.5px solid rgba(255,255,255,0.35); color: white;"
+          >
+            So funktioniert's
+          </a>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="flex flex-wrap gap-x-8 gap-y-4">
+          <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-full flex items-center justify-center" style="background: rgba(255,255,255,0.1);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m2 12 10-7 10 7"/><path d="m2 12 10 7 10-7"/></svg>
+            </div>
+            <span class="text-sm font-medium text-white/80">Auf Deutsch</span>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-full flex items-center justify-center" style="background: rgba(255,255,255,0.1);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+            </div>
+            <span class="text-sm font-medium text-white/80">100% Online</span>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-full flex items-center justify-center" style="background: rgba(255,255,255,0.1);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/></svg>
+            </div>
+            <span class="text-sm font-medium text-white/80">Finance-Experten</span>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-full flex items-center justify-center" style="background: rgba(255,255,255,0.1);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0"/><path d="M3.6 9h16.8"/><path d="M3.6 15h16.8"/><path d="M12 3a15.3 15.3 0 0 1 4 9 15.3 15.3 0 0 1-4 9 15.3 15.3 0 0 1-4-9 15.3 15.3 0 0 1 4-9"/></svg>
+            </div>
+            <span class="text-sm font-medium text-white/80">Selbst Expats</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════ KURZVORSTELLUNG ═══════════ -->
+  <section style="background-color: var(--color-background);">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8 py-20 md:py-28">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div class="lg:col-span-7">
+          <span
+            class="inline-block text-xs font-semibold uppercase tracking-[0.15em] mb-4 px-3 py-1.5 rounded-[var(--radius-full)]"
+            style="color: var(--color-primary-container); background-color: var(--color-primary-fixed); font-family: var(--font-display);"
+          >
+            Wer wir sind
+          </span>
+          <h2 class="mb-6" style="color: var(--color-on-surface); font-family: var(--font-display);">
+            Die Brücke zwischen deutschem Know-how und australischem Steuerrecht
+          </h2>
+          <p class="text-lg leading-relaxed" style="color: var(--color-on-surface-variant); font-family: var(--font-body);">
+            Wir sind selbst Deutsche, die nach Australien ausgewandert sind — und wissen aus eigener Erfahrung, wie verwirrend das australische Steuersystem sein kann. Mit unserem Background in Finance und Banking haben wir DownUnder Steuerberatung gegründet, um anderen Deutschen genau die Hilfe zu bieten, die wir uns damals gewünscht hätten.
+          </p>
+        </div>
+        <div class="lg:col-span-5">
+          <!-- Visual accent — abstract card composition -->
+          <div class="relative">
+            <div
+              class="aspect-[4/3] rounded-[var(--radius-xl)] flex items-center justify-center"
+              style="background: var(--gradient-hero);"
+            >
+              <div class="text-center px-8">
+                <div class="flex justify-center gap-3 mb-4">
+                  <!-- DE Flag -->
+                  <div class="flex flex-col w-10 h-7 rounded overflow-hidden shadow-md">
+                    <div class="flex-1 bg-black"></div>
+                    <div class="flex-1 bg-red-600"></div>
+                    <div class="flex-1 bg-yellow-400"></div>
+                  </div>
+                  <!-- Arrow -->
+                  <svg class="self-center" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  <!-- AU Flag simplified -->
+                  <div class="w-10 h-7 rounded overflow-hidden shadow-md flex items-center justify-center" style="background: #003087;">
+                    <svg width="18" height="14" viewBox="0 0 18 14" fill="none">
+                      <polygon points="9,2 9.6,4 11.6,4 10,5.2 10.6,7.2 9,6 7.4,7.2 8,5.2 6.4,4 8.4,4" fill="white"/>
+                      <polygon points="4,8 4.3,9 5.3,9 4.5,9.6 4.8,10.6 4,10 3.2,10.6 3.5,9.6 2.7,9 3.7,9" fill="white"/>
+                      <polygon points="14,8 14.3,9 15.3,9 14.5,9.6 14.8,10.6 14,10 13.2,10.6 13.5,9.6 12.7,9 13.7,9" fill="white"/>
+                    </svg>
+                  </div>
+                </div>
+                <p class="text-white/70 text-sm" style="font-family: var(--font-body);">Deutschland → Australien</p>
+              </div>
+            </div>
+            <!-- Floating accent -->
+            <div
+              class="absolute -bottom-4 -left-4 w-24 h-24 rounded-[var(--radius-lg)]"
+              style="background-color: var(--color-secondary-container); opacity: 0.6;"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════ LEISTUNGEN ═══════════ -->
+  <section style="background-color: var(--color-surface-low);">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8 py-20 md:py-28">
+      <div class="max-w-2xl mb-14">
+        <span
+          class="inline-block text-xs font-semibold uppercase tracking-[0.15em] mb-4 px-3 py-1.5 rounded-[var(--radius-full)]"
+          style="color: var(--color-primary-container); background-color: var(--color-primary-fixed); font-family: var(--font-display);"
+        >
+          Unsere Leistungen
+        </span>
+        <h2 style="color: var(--color-on-surface); font-family: var(--font-display);">
+          Was wir für dich tun
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <!-- Card 1 -->
+        <div
+          class="p-8 lg:p-10 rounded-[var(--radius-lg)] transition-shadow duration-300 hover:shadow-[var(--shadow-elevated)]"
+          style="background-color: var(--color-surface-lowest); box-shadow: var(--shadow-ambient);"
+        >
+          <div
+            class="w-12 h-12 rounded-[var(--radius-md)] flex items-center justify-center mb-6"
+            style="background: var(--color-primary-fixed);"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary-container)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+          </div>
+          <h3 class="mb-3" style="color: var(--color-on-surface); font-family: var(--font-display);">Tax Return</h3>
+          <p class="leading-relaxed" style="color: var(--color-on-surface-variant); font-family: var(--font-body);">
+            Professionelle Erstellung deiner australischen Steuererklärung mit maximaler Rückerstattung.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div
+          class="p-8 lg:p-10 rounded-[var(--radius-lg)] transition-shadow duration-300 hover:shadow-[var(--shadow-elevated)]"
+          style="background-color: var(--color-surface-lowest); box-shadow: var(--shadow-ambient);"
+        >
+          <div
+            class="w-12 h-12 rounded-[var(--radius-md)] flex items-center justify-center mb-6"
+            style="background: var(--color-primary-fixed);"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary-container)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <h3 class="mb-3" style="color: var(--color-on-surface); font-family: var(--font-display);">Steuerberatung</h3>
+          <p class="leading-relaxed" style="color: var(--color-on-surface-variant); font-family: var(--font-body);">
+            Individuelle Beratung zu Steuerpflicht, Doppelbesteuerung und Residency-Fragen.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div
+          class="p-8 lg:p-10 rounded-[var(--radius-lg)] transition-shadow duration-300 hover:shadow-[var(--shadow-elevated)]"
+          style="background-color: var(--color-surface-lowest); box-shadow: var(--shadow-ambient);"
+        >
+          <div
+            class="w-12 h-12 rounded-[var(--radius-md)] flex items-center justify-center mb-6"
+            style="background: var(--color-primary-fixed);"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary-container)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <h3 class="mb-3" style="color: var(--color-on-surface); font-family: var(--font-display);">Backpacker Service</h3>
+          <p class="leading-relaxed" style="color: var(--color-on-surface-variant); font-family: var(--font-body);">
+            Speziell für Working Holiday Visa — schnell, einfach, auf Deutsch.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-10">
+        <a
+          href="/leistungen"
+          class="inline-flex items-center gap-2 text-base font-semibold transition-colors duration-200"
+          style="color: var(--color-primary-container); font-family: var(--font-display);"
+        >
+          Alle Leistungen ansehen
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════ PROZESS ═══════════ -->
+  <section id="prozess" style="background-color: var(--color-background);">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8 py-20 md:py-28">
+      <div class="max-w-2xl mb-14">
+        <span
+          class="inline-block text-xs font-semibold uppercase tracking-[0.15em] mb-4 px-3 py-1.5 rounded-[var(--radius-full)]"
+          style="color: var(--color-primary-container); background-color: var(--color-primary-fixed); font-family: var(--font-display);"
+        >
+          So funktioniert's
+        </span>
+        <h2 style="color: var(--color-on-surface); font-family: var(--font-display);">
+          In 4 Schritten zur Steuererklärung
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+        <!-- Step 1 -->
+        <div class="relative">
+          <div
+            class="text-5xl lg:text-6xl font-extrabold mb-4 leading-none"
+            style="color: var(--color-primary); opacity: 0.12; font-family: var(--font-display);"
+          >01</div>
+          <h3 class="mb-2" style="color: var(--color-primary); font-family: var(--font-display);">Erstgespräch</h3>
+          <p class="leading-relaxed" style="color: var(--color-on-surface-variant); font-family: var(--font-body);">
+            Kostenlose Ersteinschätzung deiner steuerlichen Situation.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="relative">
+          <div
+            class="text-5xl lg:text-6xl font-extrabold mb-4 leading-none"
+            style="color: var(--color-primary); opacity: 0.12; font-family: var(--font-display);"
+          >02</div>
+          <h3 class="mb-2" style="color: var(--color-primary); font-family: var(--font-display);">Dokumente</h3>
+          <p class="leading-relaxed" style="color: var(--color-on-surface-variant); font-family: var(--font-body);">
+            Sichere Upload-Funktion für alle relevanten Unterlagen.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="relative">
+          <div
+            class="text-5xl lg:text-6xl font-extrabold mb-4 leading-none"
+            style="color: var(--color-primary); opacity: 0.12; font-family: var(--font-display);"
+          >03</div>
+          <h3 class="mb-2" style="color: var(--color-primary); font-family: var(--font-display);">Bearbeitung</h3>
+          <p class="leading-relaxed" style="color: var(--color-on-surface-variant); font-family: var(--font-body);">
+            Unsere Experten erstellen deine Steuererklärung.
+          </p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="relative">
+          <div
+            class="text-5xl lg:text-6xl font-extrabold mb-4 leading-none"
+            style="color: var(--color-primary); opacity: 0.12; font-family: var(--font-display);"
+          >04</div>
+          <h3 class="mb-2" style="color: var(--color-primary); font-family: var(--font-display);">Auszahlung</h3>
+          <p class="leading-relaxed" style="color: var(--color-on-surface-variant); font-family: var(--font-body);">
+            Einreichung beim ATO und Erstattung direkt auf dein Konto.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════ FAQ TEASER ═══════════ -->
+  <section style="background-color: var(--color-background);">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8 py-20 md:py-28">
+      <div class="max-w-2xl mb-14">
+        <span
+          class="inline-block text-xs font-semibold uppercase tracking-[0.15em] mb-4 px-3 py-1.5 rounded-[var(--radius-full)]"
+          style="color: var(--color-primary-container); background-color: var(--color-primary-fixed); font-family: var(--font-display);"
+        >
+          Häufige Fragen
+        </span>
+        <h2 style="color: var(--color-on-surface); font-family: var(--font-display);">
+          Kurz & knapp beantwortet
+        </h2>
+      </div>
+
+      <div class="max-w-3xl space-y-3">
+        <!-- FAQ 1 -->
+        <div
+          class="faq-item rounded-[var(--radius-lg)] overflow-hidden transition-shadow duration-200"
+          style="background-color: var(--color-surface-lowest); box-shadow: var(--shadow-float);"
+        >
+          <button
+            class="faq-trigger w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer"
+            aria-expanded="false"
+          >
+            <span class="text-base font-semibold" style="color: var(--color-on-surface); font-family: var(--font-display);">
+              Wann muss ich in Australien eine Steuererklärung abgeben?
+            </span>
+            <svg class="faq-chevron shrink-0 w-5 h-5 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="var(--color-on-surface-variant)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="faq-content" style="max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s ease;">
+            <div class="px-6 pb-6">
+              <p class="leading-relaxed" style="color: var(--color-on-surface-variant); font-family: var(--font-body);">
+                Das australische Steuerjahr läuft vom 1. Juli bis 30. Juni. Die Abgabefrist ist der 31. Oktober, es sei denn du nutzt einen registrierten Tax Agent — dann gelten verlängerte Fristen.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div
+          class="faq-item rounded-[var(--radius-lg)] overflow-hidden transition-shadow duration-200"
+          style="background-color: var(--color-surface-lowest); box-shadow: var(--shadow-float);"
+        >
+          <button
+            class="faq-trigger w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer"
+            aria-expanded="false"
+          >
+            <span class="text-base font-semibold" style="color: var(--color-on-surface); font-family: var(--font-display);">
+              Wie hoch ist die durchschnittliche Rückerstattung?
+            </span>
+            <svg class="faq-chevron shrink-0 w-5 h-5 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="var(--color-on-surface-variant)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="faq-content" style="max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s ease;">
+            <div class="px-6 pb-6">
+              <p class="leading-relaxed" style="color: var(--color-on-surface-variant); font-family: var(--font-body);">
+                Working Holiday Maker erhalten im Durchschnitt $2.500+ zurück. Die genaue Summe hängt von deinem Einkommen, Abzügen und der Aufenthaltsdauer ab.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div
+          class="faq-item rounded-[var(--radius-lg)] overflow-hidden transition-shadow duration-200"
+          style="background-color: var(--color-surface-lowest); box-shadow: var(--shadow-float);"
+        >
+          <button
+            class="faq-trigger w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer"
+            aria-expanded="false"
+          >
+            <span class="text-base font-semibold" style="color: var(--color-on-surface); font-family: var(--font-display);">
+              Brauche ich eine TFN (Tax File Number)?
+            </span>
+            <svg class="faq-chevron shrink-0 w-5 h-5 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="var(--color-on-surface-variant)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="faq-content" style="max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s ease;">
+            <div class="px-6 pb-6">
+              <p class="leading-relaxed" style="color: var(--color-on-surface-variant); font-family: var(--font-body);">
+                Ja, die TFN ist essentiell für jede Beschäftigung in Australien. Ohne TFN wird der Höchststeuersatz abgezogen. Wir helfen dir bei der Beantragung.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div
+          class="faq-item rounded-[var(--radius-lg)] overflow-hidden transition-shadow duration-200"
+          style="background-color: var(--color-surface-lowest); box-shadow: var(--shadow-float);"
+        >
+          <button
+            class="faq-trigger w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer"
+            aria-expanded="false"
+          >
+            <span class="text-base font-semibold" style="color: var(--color-on-surface); font-family: var(--font-display);">
+              Muss ich in Deutschland auch Steuern zahlen?
+            </span>
+            <svg class="faq-chevron shrink-0 w-5 h-5 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="var(--color-on-surface-variant)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="faq-content" style="max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s ease;">
+            <div class="px-6 pb-6">
+              <p class="leading-relaxed" style="color: var(--color-on-surface-variant); font-family: var(--font-body);">
+                Das kommt auf deine steuerliche Ansässigkeit an. Wir prüfen deine Situation und beraten dich zur Vermeidung von Doppelbesteuerung.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-10">
+        <a
+          href="/faq"
+          class="inline-flex items-center gap-2 text-base font-semibold transition-colors duration-200"
+          style="color: var(--color-primary-container); font-family: var(--font-display);"
+        >
+          Alle FAQ ansehen
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════ CTA SECTION ═══════════ -->
+  <section class="relative overflow-hidden" style="background: var(--gradient-hero);">
+    <div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+      <div class="absolute -top-20 -left-20 w-[400px] h-[400px] rounded-full opacity-[0.04]" style="background: white;"></div>
+      <div class="absolute -bottom-20 -right-20 w-[300px] h-[300px] rounded-full opacity-[0.03]" style="background: white;"></div>
+    </div>
+
+    <div class="relative mx-auto max-w-7xl px-5 sm:px-8 py-20 md:py-28 text-center">
+      <h2 class="text-white mb-5 max-w-2xl mx-auto" style="font-family: var(--font-display);">
+        Bereit für deine Steuererklärung?
+      </h2>
+      <p class="text-lg md:text-xl leading-relaxed mb-10 max-w-xl mx-auto" style="color: rgba(255,255,255,0.8); font-family: var(--font-body);">
+        Vereinbare jetzt ein kostenloses Erstgespräch und finde heraus, wie viel du zurückbekommst.
       </p>
-    </header>
-
-    <!-- Variant 1: Deep Trust -->
-    <div class="max-w-6xl mx-auto mb-12 rounded-2xl overflow-hidden shadow-2xl mx-5 lg:mx-auto">
-      <Hero
-        paletteName="palette-deep-trust"
-        paletteLabel="Variante 1 — Deep Trust"
-        paletteDescription="Basic: Navy + Teal. Vertrauen & Professionalität."
-      />
+      <a
+        href="/kontakt"
+        class="inline-flex items-center justify-center px-8 py-4 rounded-[var(--radius-xl)] text-lg font-semibold transition-all duration-200 hover:brightness-105 hover:shadow-lg"
+        style="background-color: var(--color-secondary-container); color: var(--color-on-secondary-container);"
+      >
+        Kostenloses Erstgespräch
+      </a>
     </div>
+  </section>
 
-    <!-- Variant 2: Clean Slate -->
-    <div class="max-w-6xl mx-auto mb-12 rounded-2xl overflow-hidden shadow-2xl mx-5 lg:mx-auto">
-      <Hero
-        paletteName="palette-clean-slate"
-        paletteLabel="Variante 2 — Clean Slate"
-        paletteDescription="Basic: Slate + Electric Blue. Modern & digital."
-      />
-    </div>
+</BaseLayout>
 
-    <!-- Section Divider -->
-    <div class="max-w-xs mx-auto my-8 flex items-center gap-4">
-      <div class="flex-1 h-px bg-neutral-700"></div>
-      <span class="text-neutral-500 text-xs font-mono uppercase tracking-widest">Special</span>
-      <div class="flex-1 h-px bg-neutral-700"></div>
-    </div>
+<!-- FAQ Accordion Script -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const triggers = document.querySelectorAll('.faq-trigger');
 
-    <!-- Variant 3: Red Earth -->
-    <div class="max-w-6xl mx-auto mb-12 rounded-2xl overflow-hidden shadow-2xl mx-5 lg:mx-auto">
-      <Hero
-        paletteName="palette-red-earth"
-        paletteLabel="Variante 3 — Red Earth"
-        paletteDescription="Special: Terracotta + Sage. Australisches Landschaftsgefühl ohne Klischees."
-      />
-    </div>
+    triggers.forEach((trigger) => {
+      trigger.addEventListener('click', () => {
+        const item = trigger.closest('.faq-item')!;
+        const content = item.querySelector('.faq-content') as HTMLElement;
+        const chevron = item.querySelector('.faq-chevron') as HTMLElement;
+        const isOpen = trigger.getAttribute('aria-expanded') === 'true';
 
-    <!-- Variant 4: Dusk Bridge -->
-    <div class="max-w-6xl mx-auto mb-12 rounded-2xl overflow-hidden shadow-2xl mx-5 lg:mx-auto">
-      <Hero
-        paletteName="palette-dusk-bridge"
-        paletteLabel="Variante 4 — Dusk Bridge"
-        paletteDescription="Special: Indigo + Golden Amber. Deutsch-australische Licht-Fusion."
-      />
-    </div>
+        // Close all others
+        document.querySelectorAll('.faq-item').forEach((otherItem) => {
+          if (otherItem !== item) {
+            const otherContent = otherItem.querySelector('.faq-content') as HTMLElement;
+            const otherChevron = otherItem.querySelector('.faq-chevron') as HTMLElement;
+            const otherTrigger = otherItem.querySelector('.faq-trigger')!;
+            otherContent.style.maxHeight = '0';
+            otherChevron.style.transform = 'rotate(0deg)';
+            otherTrigger.setAttribute('aria-expanded', 'false');
+          }
+        });
 
-    <!-- Footer -->
-    <footer class="text-center py-12 px-5">
-      <p class="text-neutral-600 text-xs">
-        Fonts: Space Grotesk (Headlines) + Inter (Body) — identisch über alle Varianten.
-      </p>
-    </footer>
-
-  </body>
-</html>
+        // Toggle current
+        if (isOpen) {
+          content.style.maxHeight = '0';
+          chevron.style.transform = 'rotate(0deg)';
+          trigger.setAttribute('aria-expanded', 'false');
+        } else {
+          content.style.maxHeight = content.scrollHeight + 'px';
+          chevron.style.transform = 'rotate(180deg)';
+          trigger.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  });
+</script>

@@ -1,0 +1,301 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const services = [
+  {
+    headline: 'Australian Tax Returns',
+    subline: 'Maximale Rückerstattung, minimaler Aufwand',
+    description: 'Wir erstellen deine australische Steuererklärung professionell und sorgen dafür, dass du die maximale Rückerstattung erhältst. Vollständig ATO-konform.',
+    includes: [
+      'Einkommenserfassung & Abzugsoptimierung',
+      'Lodgement beim ATO',
+      'Durchschnittlich $2.500+ Rückerstattung',
+      'Bearbeitung in unter 10 Werktagen',
+    ],
+    icon: 'receipt',
+  },
+  {
+    headline: 'Superannuation Rückerstattung',
+    subline: 'Deine Rentenrücklagen zurückholen',
+    description: 'Wenn du Australien verlässt, kannst du dir deine angesammelten Superannuation-Beiträge über einen DASP-Antrag auszahlen lassen. Wir übernehmen den gesamten Prozess.',
+    includes: [
+      'DASP-Antragsstellung',
+      'Kommunikation mit Super Funds',
+      'Steuerliche Optimierung',
+      'Auszahlung auf deutsches oder australisches Konto',
+    ],
+    icon: 'piggybank',
+  },
+  {
+    headline: 'TFN & ABN Service',
+    subline: 'Schnell startklar in Australien',
+    description: 'Die Tax File Number (TFN) und Australian Business Number (ABN) sind die Grundlage für jede Beschäftigung in Australien. Wir kümmern uns um die schnelle Beantragung.',
+    includes: [
+      'TFN-Beantragung beim ATO',
+      'ABN-Registrierung für Selbständige',
+      'Beratung zur richtigen Steuerklasse',
+      'Express-Bearbeitung verfügbar',
+    ],
+    icon: 'id',
+  },
+  {
+    headline: 'Individuelle Steuerberatung',
+    subline: 'Für komplexe steuerliche Situationen',
+    description: 'Ob Doppelbesteuerung, Tax Residency oder internationale Einkommensströme — unsere Experten beraten dich individuell und finden die optimale Lösung.',
+    includes: [
+      'Steuerliche Residency-Analyse',
+      'Doppelbesteuerungsabkommen DE/AU',
+      'Beratung für Expats & Digital Nomads',
+      'Vermögensstrukturierung & Investments',
+    ],
+    icon: 'compass',
+  },
+];
+
+const steps = [
+  {
+    number: '01',
+    title: 'Ersteinschätzung',
+    description: 'Schildere uns deine Situation in einem kostenlosen Erstgespräch. Wir analysieren deinen steuerlichen Status und beraten dich zu den nächsten Schritten.',
+  },
+  {
+    number: '02',
+    title: 'Dokumente hochladen',
+    description: 'Lade deine Unterlagen sicher über unser Portal hoch. Wir sagen dir genau, welche Dokumente wir brauchen.',
+  },
+  {
+    number: '03',
+    title: 'Experten-Bearbeitung',
+    description: 'Unsere zertifizierten Steuerberater erstellen deine Steuererklärung und optimieren deine Rückerstattung.',
+  },
+  {
+    number: '04',
+    title: 'Auszahlung',
+    description: 'Wir reichen beim ATO ein und du erhältst deine Rückerstattung direkt auf dein Konto — in der Regel innerhalb von 10 Tagen.',
+  },
+];
+---
+
+<BaseLayout title="Leistungen" description="Steuerliche Expertise für Deutsche in Australien — Tax Returns, Superannuation, TFN/ABN und individuelle Beratung.">
+
+  <!-- ===== HERO ===== -->
+  <section class="relative overflow-hidden py-20 md:py-28" style="background: var(--gradient-hero);">
+    <!-- Subtle decorative element -->
+    <div class="absolute top-0 right-0 w-[500px] h-[500px] opacity-[0.04] pointer-events-none" style="background: radial-gradient(circle, white 0%, transparent 70%);"></div>
+
+    <div class="mx-auto max-w-7xl px-5 sm:px-8">
+      <div class="max-w-3xl">
+        <span
+          class="inline-block text-xs font-semibold uppercase tracking-[0.15em] mb-5 px-3.5 py-1.5 rounded-[var(--radius-full)]"
+          style="background: rgba(167, 200, 255, 0.12); color: var(--color-primary-fixed-dim); font-family: var(--font-display);"
+        >
+          Unsere Leistungen
+        </span>
+        <h1 class="text-white mb-5">
+          Steuerliche Expertise für Deutsche in Australien
+        </h1>
+        <p class="text-lg md:text-xl leading-relaxed max-w-2xl" style="color: var(--color-primary-fixed-dim);">
+          Von der einfachen Steuererklärung bis zur komplexen Beratung — wir decken alle steuerlichen Bedürfnisse ab.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  {services.map((service, i) => (
+    <section
+      class="py-20 md:py-28"
+      style={`background-color: var(${i % 2 === 0 ? '--color-background' : '--color-surface-low'});`}
+    >
+      <div class="mx-auto max-w-7xl px-5 sm:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <!-- Text Content -->
+          <div class:list={[i % 2 !== 0 && 'lg:order-2']}>
+            <!-- Icon -->
+            <div
+              class="w-14 h-14 rounded-[var(--radius-lg)] flex items-center justify-center mb-7"
+              style="background: var(--gradient-primary);"
+            >
+              {service.icon === 'receipt' && (
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z" />
+                  <path d="M8 10h8" /><path d="M8 14h4" />
+                </svg>
+              )}
+              {service.icon === 'piggybank' && (
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M19 5c-1.5 0-2.8 1.4-3 2-3.5-1.4-11-.3-11 5 0 1.8 0 3 2 4.5V20h4v-2h3v2h4v-4c1-.5 1.7-1 2-2h2v-4h-2c0-1-.5-1.5-1-2" />
+                  <path d="M2 9.5l1.5 1" /><circle cx="15.5" cy="9.5" r="0.5" fill="white" />
+                </svg>
+              )}
+              {service.icon === 'id' && (
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="5" width="20" height="14" rx="2" />
+                  <circle cx="8" cy="12" r="2" /><path d="M14 10h4" /><path d="M14 14h2" />
+                </svg>
+              )}
+              {service.icon === 'compass' && (
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" fill="rgba(255,255,255,0.15)" stroke="white" />
+                </svg>
+              )}
+            </div>
+
+            <h2 class="mb-2">{service.headline}</h2>
+            <p
+              class="text-base font-medium mb-5"
+              style="color: var(--color-primary-container); font-family: var(--font-display);"
+            >
+              {service.subline}
+            </p>
+            <p class="mb-8 leading-relaxed" style="color: var(--color-on-surface-variant);">
+              {service.description}
+            </p>
+
+            <!-- Includes -->
+            <ul class="space-y-3.5">
+              {service.includes.map((item) => (
+                <li class="flex items-start gap-3">
+                  <div class="mt-1.5 w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center" style="background-color: var(--color-primary-fixed);">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                      <path d="M2.5 6L5 8.5L9.5 4" stroke="var(--color-primary)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </div>
+                  <span class="text-[0.95rem]" style="color: var(--color-on-surface);">
+                    {item}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Visual Card -->
+          <div class:list={[i % 2 !== 0 && 'lg:order-1']}>
+            <div
+              class="relative rounded-[var(--radius-xl)] overflow-hidden aspect-[4/3]"
+              style={`background-color: var(--color-surface-lowest); box-shadow: var(--shadow-ambient);`}
+            >
+              <!-- Abstract decorative pattern -->
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="relative w-full h-full">
+                  <!-- Gradient accent -->
+                  <div
+                    class="absolute top-8 left-8 right-8 bottom-8 rounded-[var(--radius-lg)] opacity-[0.06]"
+                    style="background: var(--gradient-primary);"
+                  ></div>
+                  <!-- Centered large icon -->
+                  <div class="absolute inset-0 flex items-center justify-center">
+                    <div
+                      class="w-24 h-24 md:w-32 md:h-32 rounded-[var(--radius-xl)] flex items-center justify-center"
+                      style="background: var(--gradient-primary);"
+                    >
+                      {service.icon === 'receipt' && (
+                        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12 md:w-14 md:h-14">
+                          <path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z" />
+                          <path d="M8 10h8" /><path d="M8 14h4" />
+                        </svg>
+                      )}
+                      {service.icon === 'piggybank' && (
+                        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12 md:w-14 md:h-14">
+                          <path d="M19 5c-1.5 0-2.8 1.4-3 2-3.5-1.4-11-.3-11 5 0 1.8 0 3 2 4.5V20h4v-2h3v2h4v-4c1-.5 1.7-1 2-2h2v-4h-2c0-1-.5-1.5-1-2" />
+                          <path d="M2 9.5l1.5 1" /><circle cx="15.5" cy="9.5" r="0.5" fill="rgba(255,255,255,0.85)" />
+                        </svg>
+                      )}
+                      {service.icon === 'id' && (
+                        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12 md:w-14 md:h-14">
+                          <rect x="2" y="5" width="20" height="14" rx="2" />
+                          <circle cx="8" cy="12" r="2" /><path d="M14 10h4" /><path d="M14 14h2" />
+                        </svg>
+                      )}
+                      {service.icon === 'compass' && (
+                        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12 md:w-14 md:h-14">
+                          <circle cx="12" cy="12" r="10" />
+                          <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.85)" />
+                        </svg>
+                      )}
+                    </div>
+                  </div>
+                  <!-- Decorative dots -->
+                  <div class="absolute bottom-6 right-6 grid grid-cols-3 gap-2 opacity-[0.08]">
+                    {Array(9).fill(0).map(() => (
+                      <div class="w-2 h-2 rounded-full" style="background-color: var(--color-primary);"></div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <!-- ===== PROCESS ===== -->
+  <section class="py-20 md:py-28" style="background-color: var(--color-background);">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-16 md:mb-20">
+        <span
+          class="inline-block text-xs font-semibold uppercase tracking-[0.15em] mb-5 px-3.5 py-1.5 rounded-[var(--radius-full)]"
+          style="background-color: var(--color-primary-fixed); color: var(--color-primary); font-family: var(--font-display);"
+        >
+          Unser Prozess
+        </span>
+        <h2 class="mb-4">So einfach geht's</h2>
+      </div>
+
+      <!-- Steps -->
+      <div class="max-w-4xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          {steps.map((step) => (
+            <div
+              class="relative p-8 md:p-10 rounded-[var(--radius-lg)] transition-shadow duration-300 hover:shadow-[var(--shadow-ambient)]"
+              style="background-color: var(--color-surface-lowest);"
+            >
+              <!-- Step Number -->
+              <span
+                class="block text-4xl md:text-5xl font-extrabold mb-5 leading-none"
+                style="color: var(--color-primary-fixed); font-family: var(--font-display);"
+              >
+                {step.number}
+              </span>
+              <h3 class="mb-3">{step.title}</h3>
+              <p class="text-[0.95rem] leading-relaxed" style="color: var(--color-on-surface-variant);">
+                {step.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="relative overflow-hidden py-20 md:py-28" style="background: var(--gradient-hero);">
+    <!-- Decorative -->
+    <div class="absolute bottom-0 left-0 w-[600px] h-[600px] opacity-[0.04] pointer-events-none" style="background: radial-gradient(circle, white 0%, transparent 70%); transform: translate(-30%, 30%);"></div>
+
+    <div class="mx-auto max-w-7xl px-5 sm:px-8 text-center relative z-10">
+      <div class="max-w-2xl mx-auto">
+        <h2 class="text-white mb-5">
+          Welcher Service passt zu dir?
+        </h2>
+        <p class="text-lg leading-relaxed mb-10" style="color: var(--color-primary-fixed-dim);">
+          Wir finden gemeinsam die beste Lösung für deine steuerliche Situation in Australien.
+        </p>
+        <a
+          href="/kontakt"
+          class="inline-flex items-center gap-2.5 px-8 py-4 rounded-[var(--radius-xl)] text-base font-semibold transition-all duration-200 hover:shadow-[var(--shadow-elevated)] hover:scale-[1.02]"
+          style="background: var(--color-secondary-container); color: var(--color-on-secondary-container);"
+        >
+          Kostenlose Erstberatung
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
