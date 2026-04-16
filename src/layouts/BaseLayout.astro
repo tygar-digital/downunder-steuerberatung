@@ -7,13 +7,27 @@ interface Props {
   title: string;
   description?: string;
   ogImage?: string;
+  schema?: object;
 }
 
 const {
   title,
   description = 'Steuerberatung für Deutsche in Australien — auf Deutsch, ohne Stress. Tax Returns, Beratung und mehr.',
-  ogImage = '/og-image.jpg'
+  ogImage = '/og-image.jpg',
+  schema
 } = Astro.props;
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "DownUnder Steuerberatung",
+  "description": "Steuerberatung für Deutsche in Australien — Tax Returns, Superannuation, TFN/ABN und individuelle Beratung.",
+  "url": "https://downunder-steuerberatung.com",
+  "email": "hello@downunder-steuerberatung.com",
+  "knowsLanguage": ["de", "en"],
+  "areaServed": "AU",
+  "serviceType": "Tax Consulting"
+};
 
 const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : Astro.url;
 ---
@@ -25,9 +39,9 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : Astr
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content={description} />
 
-  <!-- Preload Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Preload Fonts (lokal gehostet) -->
+  <link rel="preload" href="/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
 
   <!-- SEO -->
   <link rel="canonical" href={canonicalURL} />
@@ -41,10 +55,15 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : Astr
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
   <title>{title} | DownUnder Steuerberatung</title>
+
+  <!-- Schema.org -->
+  <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+  {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
 </head>
 <body class="min-h-screen flex flex-col">
+  <a href="#main-content" class="skip-to-content">Zum Inhalt springen</a>
   <Navigation />
-  <main class="flex-1">
+  <main id="main-content" class="flex-1">
     <slot />
   </main>
   <Footer />

@@ -1,12 +1,8 @@
 ---
-const currentPath = Astro.url.pathname;
+import content from '../data/content.json';
 
-const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/leistungen', label: 'Leistungen' },
-  { href: '/faq', label: 'FAQ & Wissen' },
-  { href: '/ueber-uns', label: 'Über uns' },
-];
+const currentPath = Astro.url.pathname;
+const { links: navLinks, logoAlt, brandName, ctaText, ctaHref, mobileMenuLabel } = content.nav;
 ---
 
 <header
@@ -17,9 +13,9 @@ const navLinks = [
     <nav class="flex items-center justify-between h-20">
       <!-- Logo -->
       <a href="/" class="flex items-center gap-2 group">
-        <img src="/logo.svg" alt="DownUnder Logo" class="h-10 w-auto" />
-        <span class="font-bold text-lg hidden sm:block" style="font-family: var(--font-display); color: var(--color-on-surface);">
-          DownUnder
+        <img src="/logo.svg" alt={logoAlt} class="h-10 w-auto" />
+        <span class="font-bold text-lg" style="font-family: var(--font-display); color: var(--color-on-surface);">
+          {brandName}
         </span>
       </a>
 
@@ -43,18 +39,18 @@ const navLinks = [
       <!-- CTA + Mobile Toggle -->
       <div class="flex items-center gap-4">
         <a
-          href="/kontakt"
+          href={ctaHref}
           class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-[var(--radius-xl)] text-sm font-semibold transition-all duration-200 hover:shadow-[var(--shadow-float)]"
           style="background: var(--color-secondary-container); color: var(--color-on-secondary-container);"
         >
-          Beratung anfragen
+          {ctaText}
         </a>
 
         <!-- Mobile Menu Button -->
         <button
           id="mobile-toggle"
-          class="md:hidden flex items-center justify-center w-10 h-10"
-          aria-label="Menü öffnen"
+          class="md:hidden flex items-center justify-center w-11 h-11"
+          aria-label={mobileMenuLabel}
           aria-expanded="false"
         >
           <!-- Hamburger Icon -->
@@ -90,11 +86,11 @@ const navLinks = [
         </a>
       ))}
       <a
-        href="/kontakt"
+        href={ctaHref}
         class="mt-3 flex items-center justify-center px-5 py-3 rounded-[var(--radius-xl)] text-base font-semibold transition-all duration-200"
         style="background: var(--color-secondary-container); color: var(--color-on-secondary-container);"
       >
-        Beratung anfragen
+        {ctaText}
       </a>
     </div>
   </div>

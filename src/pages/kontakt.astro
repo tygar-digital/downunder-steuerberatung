@@ -1,29 +1,14 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import content from '../data/content.json';
 
-const topics = [
-  'Steuererklärung',
-  'Superannuation',
-  'TFN / ABN',
-  'Beratung',
-  'Sonstiges',
-];
-
-const offices = [
-  {
-    city: 'Sydney',
-    address: '120 Pitt Street, Sydney, NSW 2000, Australien',
-  },
-  {
-    city: 'Berlin',
-    address: 'Friedrichstraße 100, 10117 Berlin, Deutschland',
-  },
-];
+const { hero, form, directContact, cta } = content.kontakt;
+const topics = form.topics;
 ---
 
 <BaseLayout
-  title="Kontakt"
-  description="Kontaktieren Sie DownUnder Steuerberatung — wir antworten innerhalb von 24 Stunden. Beratung für Deutsche in Australien."
+  title={content.meta.kontakt.title}
+  description={content.meta.kontakt.description}
 >
 
   <!-- Hero -->
@@ -34,13 +19,13 @@ const offices = [
         class="text-sm font-semibold uppercase tracking-widest mb-4"
         style="color: var(--color-secondary-container); font-family: var(--font-display);"
       >
-        Kontakt
+        {hero.badge}
       </p>
       <h1 class="text-white max-w-3xl">
-        Wir freuen uns auf deine Nachricht
+        {hero.headline}
       </h1>
       <p class="mt-5 text-lg max-w-2xl leading-relaxed" style="color: var(--color-primary-fixed-dim);">
-        Ob Frage, Anliegen oder Erstberatung — wir antworten innerhalb von 24 Stunden.
+        {hero.subline}
       </p>
     </div>
   </section>
@@ -61,7 +46,7 @@ const offices = [
                   class="block text-sm font-semibold mb-2"
                   style="font-family: var(--font-display); color: var(--color-on-surface);"
                 >
-                  Name
+                  {form.labels.name}
                 </label>
                 <input
                   type="text"
@@ -70,7 +55,7 @@ const offices = [
                   required
                   class="w-full px-4 py-3 rounded-[var(--radius-md)] text-base outline-none transition-all duration-200"
                   style="background-color: var(--color-surface-highest); color: var(--color-on-surface); border: 2px solid transparent; font-family: var(--font-body);"
-                  placeholder="Dein vollständiger Name"
+                  placeholder={form.placeholders.name}
                 />
               </div>
 
@@ -81,7 +66,7 @@ const offices = [
                   class="block text-sm font-semibold mb-2"
                   style="font-family: var(--font-display); color: var(--color-on-surface);"
                 >
-                  E-Mail
+                  {form.labels.email}
                 </label>
                 <input
                   type="email"
@@ -90,30 +75,7 @@ const offices = [
                   required
                   class="w-full px-4 py-3 rounded-[var(--radius-md)] text-base outline-none transition-all duration-200"
                   style="background-color: var(--color-surface-highest); color: var(--color-on-surface); border: 2px solid transparent; font-family: var(--font-body);"
-                  placeholder="deine@email.com"
-                />
-              </div>
-
-              <!-- TFN -->
-              <div>
-                <label
-                  for="tfn"
-                  class="block text-sm font-semibold mb-2"
-                  style="font-family: var(--font-display); color: var(--color-on-surface);"
-                >
-                  TFN (Tax File Number)
-                  <span class="font-normal" style="color: var(--color-outline);">— optional</span>
-                </label>
-                <input
-                  type="text"
-                  id="tfn"
-                  name="tfn"
-                  pattern="\d{9}"
-                  inputmode="numeric"
-                  maxlength="9"
-                  class="w-full px-4 py-3 rounded-[var(--radius-md)] text-base outline-none transition-all duration-200"
-                  style="background-color: var(--color-surface-highest); color: var(--color-on-surface); border: 2px solid transparent; font-family: var(--font-body);"
-                  placeholder="Deine Tax File Number (optional)"
+                  placeholder={form.placeholders.email}
                 />
               </div>
 
@@ -124,7 +86,7 @@ const offices = [
                   class="block text-sm font-semibold mb-2"
                   style="font-family: var(--font-display); color: var(--color-on-surface);"
                 >
-                  Thema
+                  {form.labels.topic}
                 </label>
                 <select
                   id="topic"
@@ -133,7 +95,7 @@ const offices = [
                   class="w-full px-4 py-3 rounded-[var(--radius-md)] text-base outline-none transition-all duration-200 appearance-none cursor-pointer"
                   style="background-color: var(--color-surface-highest); color: var(--color-on-surface); border: 2px solid transparent; font-family: var(--font-body); background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2216%22 height=%2216%22 viewBox=%220 0 16 16%22 fill=%22none%22><path d=%22M4 6L8 10L12 6%22 stroke=%22%2343474F%22 stroke-width=%221.5%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/></svg>'); background-repeat: no-repeat; background-position: right 16px center;"
                 >
-                  <option value="" disabled selected>Bitte wählen</option>
+                  <option value="" disabled selected>{form.placeholders.topic}</option>
                   {topics.map((topic) => (
                     <option value={topic}>{topic}</option>
                   ))}
@@ -147,7 +109,7 @@ const offices = [
                   class="block text-sm font-semibold mb-2"
                   style="font-family: var(--font-display); color: var(--color-on-surface);"
                 >
-                  Nachricht
+                  {form.labels.message}
                 </label>
                 <textarea
                   id="message"
@@ -156,24 +118,25 @@ const offices = [
                   required
                   class="w-full px-4 py-3 rounded-[var(--radius-md)] text-base outline-none transition-all duration-200 resize-y"
                   style="background-color: var(--color-surface-highest); color: var(--color-on-surface); border: 2px solid transparent; font-family: var(--font-body);"
-                  placeholder="Wie können wir dir helfen?"
+                  placeholder={form.placeholders.message}
                 ></textarea>
               </div>
 
               <!-- Submit -->
               <button
                 type="submit"
+                data-success-text={form.successText}
                 class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-[var(--radius-xl)] text-base font-semibold transition-all duration-200 hover:shadow-[var(--shadow-float)] cursor-pointer"
                 style="background: var(--color-secondary-container); color: var(--color-on-secondary-container);"
               >
-                Nachricht senden
+                {form.submitText}
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M14 2L7 9M14 2L10 14L7 9M14 2L2 6L7 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </button>
 
-              <p class="text-xs" style="color: var(--color-on-surface-variant);">
-                Wir antworten in der Regel innerhalb von 24 Stunden an Werktagen.
+              <p class="text-xs leading-relaxed" style="color: var(--color-on-surface-variant);">
+                {form.privacyNote.split(form.privacyLinkText)[0]}<a href={form.privacyLinkHref} class="underline hover:no-underline" style="color: var(--color-primary-container);">{form.privacyLinkText}</a>{form.privacyNote.split(form.privacyLinkText)[1]}
               </p>
             </form>
           </div>
@@ -183,7 +146,7 @@ const offices = [
         <div class="lg:col-span-2 space-y-6">
           <!-- Contact Options -->
           <div class="p-8 rounded-[var(--radius-lg)]" style="background-color: var(--color-surface-lowest);">
-            <h3 class="text-lg mb-6" style="font-family: var(--font-display);">Direkt erreichen</h3>
+            <h3 class="text-lg mb-6" style="font-family: var(--font-display);">{directContact.headline}</h3>
             <div class="space-y-5">
               <!-- Email -->
               <div class="flex items-start gap-4">
@@ -197,13 +160,13 @@ const offices = [
                   </svg>
                 </div>
                 <div>
-                  <p class="text-sm font-semibold mb-0.5" style="font-family: var(--font-display); color: var(--color-on-surface);">E-Mail</p>
+                  <p class="text-sm font-semibold mb-0.5" style="font-family: var(--font-display); color: var(--color-on-surface);">{directContact.email.label}</p>
                   <a
-                    href="mailto:hello@downunder-steuerberatung.com"
+                    href={`mailto:${directContact.email.value}`}
                     class="text-sm break-all"
                     style="color: var(--color-primary-container);"
                   >
-                    hello@downunder-steuerberatung.com
+                    {directContact.email.value}
                   </a>
                 </div>
               </div>
@@ -220,14 +183,13 @@ const offices = [
                   </svg>
                 </div>
                 <div>
-                  <p class="text-sm font-semibold mb-0.5" style="font-family: var(--font-display); color: var(--color-on-surface);">WhatsApp</p>
-                  <a
-                    href="https://wa.me/61290000000"
+                  <p class="text-sm font-semibold mb-0.5" style="font-family: var(--font-display); color: var(--color-on-surface);">{directContact.whatsapp.label}</p>
+                  <p
                     class="text-sm"
-                    style="color: var(--color-primary-container);"
+                    style="color: var(--color-on-surface-variant);"
                   >
-                    +61 2 9000 0000
-                  </a>
+                    {directContact.whatsapp.value}
+                  </p>
                 </div>
               </div>
 
@@ -243,72 +205,17 @@ const offices = [
                   </svg>
                 </div>
                 <div>
-                  <p class="text-sm font-semibold mb-0.5" style="font-family: var(--font-display); color: var(--color-on-surface);">Telefonzeiten</p>
+                  <p class="text-sm font-semibold mb-0.5" style="font-family: var(--font-display); color: var(--color-on-surface);">{directContact.officeHours.label}</p>
                   <p class="text-sm" style="color: var(--color-on-surface-variant);">
-                    Mo–Fr, 9:00–17:00 (AEST)
+                    {directContact.officeHours.value}
                   </p>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Response Time -->
-          <div class="p-8 rounded-[var(--radius-lg)]" style="background-color: var(--color-surface-lowest);">
-            <div class="flex items-start gap-4">
-              <div
-                class="w-10 h-10 shrink-0 rounded-full flex items-center justify-center"
-                style="background-color: var(--color-primary-fixed);"
-              >
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6.5 9L8.5 11L12 7" stroke="var(--color-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <circle cx="9" cy="9" r="7" stroke="var(--color-primary)" stroke-width="1.5"/>
-                </svg>
-              </div>
-              <div>
-                <p class="text-sm font-semibold mb-1" style="font-family: var(--font-display); color: var(--color-on-surface);">Antwortgarantie</p>
-                <p class="text-sm leading-relaxed" style="color: var(--color-on-surface-variant);">
-                  Wir antworten garantiert innerhalb von 24 Stunden an Werktagen.
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- Offices -->
-  <section class="py-20 md:py-28" style="background-color: var(--color-surface-low);">
-    <div class="mx-auto max-w-7xl px-5 sm:px-8">
-      <h2 class="mb-12">Unsere Standorte</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {offices.map((office) => (
-          <div
-            class="rounded-[var(--radius-lg)] overflow-hidden"
-            style="background-color: var(--color-surface-lowest);"
-          >
-            <!-- Map Placeholder -->
-            <div
-              class="h-48 flex items-center justify-center"
-              style="background-color: var(--color-surface-container);"
-            >
-              <div class="text-center">
-                <svg class="mx-auto mb-2" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M14 3C9.58 3 6 6.58 6 11C6 17.25 14 25 14 25C14 25 22 17.25 22 11C22 6.58 18.42 3 14 3Z" stroke="var(--color-outline)" stroke-width="1.5"/>
-                  <circle cx="14" cy="11" r="3" stroke="var(--color-outline)" stroke-width="1.5"/>
-                </svg>
-                <p class="text-xs font-medium" style="color: var(--color-outline);">Kartenansicht</p>
-              </div>
-            </div>
-            <div class="p-6 md:p-8">
-              <h3 class="text-xl mb-2" style="font-family: var(--font-display);">{office.city}</h3>
-              <p class="text-sm leading-relaxed" style="color: var(--color-on-surface-variant);">
-                {office.address}
-              </p>
-            </div>
-          </div>
-        ))}
       </div>
     </div>
   </section>
@@ -316,16 +223,16 @@ const offices = [
   <!-- CTA -->
   <section class="py-20 md:py-28" style="background: var(--gradient-hero);">
     <div class="mx-auto max-w-7xl px-5 sm:px-8 text-center">
-      <h2 class="text-white mb-4">Lieber direkt sprechen?</h2>
+      <h2 class="text-white mb-4">{cta.headline}</h2>
       <p class="text-lg max-w-xl mx-auto mb-10 leading-relaxed" style="color: var(--color-primary-fixed-dim);">
-        Vereinbare ein kostenloses Erstgespräch per Video-Call.
+        {cta.text}
       </p>
       <a
-        href="/kontakt"
+        href={cta.buttonHref}
         class="inline-flex items-center gap-2 px-8 py-4 rounded-[var(--radius-xl)] text-base font-semibold transition-all duration-200 hover:shadow-[var(--shadow-elevated)]"
         style="background: var(--color-secondary-container); color: var(--color-on-secondary-container);"
       >
-        Video-Call buchen
+        {cta.buttonText}
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M3.33 8H12.67M12.67 8L8.67 4M12.67 8L8.67 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
@@ -359,8 +266,9 @@ const offices = [
     const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
     const originalText = btn.innerHTML;
 
+    const successText = btn.dataset.successText || 'Nachricht gesendet!';
     btn.innerHTML = `
-      <span>Nachricht gesendet!</span>
+      <span>${successText}</span>
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M3.33 8L6.67 11.33L12.67 5.33" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>

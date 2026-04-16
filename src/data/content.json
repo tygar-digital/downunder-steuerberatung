@@ -1,0 +1,365 @@
+{
+  "meta": {
+    "home": {
+      "title": "Steuerberatung für Deutsche in Australien",
+      "description": "Wir sind spezialisiert auf Steuererklärungen und Beratung für Deutsche in Australien. Professionell, verständlich, 100% digital."
+    },
+    "leistungen": {
+      "title": "Leistungen",
+      "description": "Steuerliche Expertise für Deutsche in Australien — Tax Returns, Superannuation, TFN/ABN und individuelle Beratung."
+    },
+    "ueberUns": {
+      "title": "Über uns",
+      "description": "Lerne das Team von DownUnder Steuerberatung kennen — gegründet von deutschen Expats und Australiern mit Erfahrung in der Steuerberatung, für Deutsche in Australien."
+    },
+    "kontakt": {
+      "title": "Kontakt",
+      "description": "Kontaktiere DownUnder Steuerberatung — wir antworten innerhalb von 24 Stunden. Beratung für Deutsche in Australien."
+    }
+  },
+  "nav": {
+    "logoAlt": "DownUnder Logo",
+    "brandName": "DownUnder Steuerberatung",
+    "links": [
+      { "href": "/", "label": "Home" },
+      { "href": "/leistungen", "label": "Leistungen" },
+      { "href": "/ueber-uns", "label": "Über uns" }
+    ],
+    "ctaText": "Beratung anfragen",
+    "ctaHref": "/kontakt",
+    "mobileMenuLabel": "Menü öffnen"
+  },
+  "footer": {
+    "brandName": "DownUnder Steuerberatung",
+    "logoAlt": "DownUnder Logo",
+    "tagline": "Steuerberatung für Deutsche in Australien. Auf Deutsch, ohne Stress — von Expats für Expats.",
+    "sections": {
+      "services": {
+        "heading": "Leistungen",
+        "links": [
+          { "href": "/leistungen", "label": "Tax Returns" },
+          { "href": "/leistungen", "label": "Superannuation" },
+          { "href": "/leistungen", "label": "TFN & ABN" },
+          { "href": "/leistungen", "label": "Steuerberatung" }
+        ]
+      },
+      "company": {
+        "heading": "Unternehmen",
+        "links": [
+          { "href": "/ueber-uns", "label": "Über uns" },
+          { "href": "/kontakt", "label": "Kontakt" }
+        ]
+      },
+      "contact": {
+        "heading": "Kontakt",
+        "email": "hello@downunder-steuerberatung.com"
+      },
+      "legal": {
+        "links": [
+          { "href": "/impressum", "label": "Impressum" },
+          { "href": "/datenschutz", "label": "Datenschutz" }
+        ]
+      }
+    },
+    "copyright": "DownUnder Steuerberatung. Alle Rechte vorbehalten."
+  },
+  "home": {
+    "hero": {
+      "headline": "Deine Steuererklärung in Australien — auf Deutsch, ohne Stress.",
+      "subline": "Wir sind spezialisiert auf Steuererklärungen und Beratung für Deutsche in Australien. Professionell, verständlich, 100% digital.",
+      "ctaPrimary": {
+        "text": "Jetzt Beratung anfragen",
+        "href": "/kontakt"
+      },
+      "ctaSecondary": {
+        "text": "So funktioniert's",
+        "href": "#prozess"
+      },
+      "trustBadges": [
+        "Auf Deutsch",
+        "100% Online",
+        "Finance-Experten",
+        "Selbst Expats"
+      ]
+    },
+    "about": {
+      "badge": "Wer wir sind",
+      "headline": "Die Brücke zwischen deutschem Know-how und australischem Steuerrecht",
+      "text": "Wir sind ein Team aus deutschen Auswanderern und australischen Steuerexperten mit langjähriger Erfahrung im australischen Steuerrecht. Aus eigener Erfahrung wissen wir, wie verwirrend das australische Steuersystem gerade für Deutsche Backpacker und Expats sein kann. Mit unserem Background in Steuern und Accounting haben wir DownUnder Steuerberatung gegründet, um genau die Unterstützung zu bieten, die wir uns damals selbst gewünscht hätten.",
+      "visualText": "Deutschland → Australien"
+    },
+    "services": {
+      "badge": "Unsere Leistungen",
+      "headline": "Was wir für dich tun",
+      "items": [
+        {
+          "title": "Tax Return",
+          "description": "Professionelle Erstellung deiner australischen Steuererklärung."
+        },
+        {
+          "title": "Steuerberatung",
+          "description": "Individuelle Beratung zu Steuerpflicht, Doppelbesteuerung und Residency-Fragen."
+        },
+        {
+          "title": "Buchhaltungsberatung für Backpacker",
+          "description": "Speziell für Working-Holiday Visa – inklusive Beratungen für Contractor (ABN, Rechnungen, Umsatzsteuer etc.)"
+        }
+      ],
+      "linkText": "Alle Leistungen ansehen",
+      "linkHref": "/leistungen"
+    },
+    "process": {
+      "badge": "So funktioniert's",
+      "headline": "In 4 Schritten zur Steuererklärung",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Erstgespräch",
+          "description": "Kostenlose Ersteinschätzung deiner steuerlichen Situation."
+        },
+        {
+          "number": "02",
+          "title": "Dokumente",
+          "description": "Sichere Upload-Funktion für alle relevanten Unterlagen."
+        },
+        {
+          "number": "03",
+          "title": "Bearbeitung",
+          "description": "Unsere Experten erstellen deine Steuererklärung."
+        },
+        {
+          "number": "04",
+          "title": "Auszahlung",
+          "description": "Einreichung beim ATO und Erstattung direkt auf dein Konto."
+        }
+      ]
+    },
+    "faq": {
+      "badge": "Häufige Fragen",
+      "headline": "Kurz & knapp beantwortet",
+      "items": [
+        {
+          "question": "Muss ich als deutscher Backpacker in Australien Steuern zahlen?",
+          "answer": "Ja. Sobald du in Australien arbeitest und Einkommen erzielst, bist du grundsätzlich steuerpflichtig. Wichtig ist: Auch wenn dein Arbeitgeber bereits Steuern einbehält, musst du in der Regel am Ende des Steuerjahres eine Steuererklärung abgeben."
+        },
+        {
+          "question": "Wann muss ich in Australien eine Steuererklärung abgeben?",
+          "answer": "Das australische Steuerjahr läuft vom 1. Juli bis 30. Juni. Die Abgabefrist ist der 31. Oktober, es sei denn du nutzt einen registrierten Tax Agent — dann gelten verlängerte Fristen."
+        },
+        {
+          "question": "Bekomme ich zu viel gezahlte Steuern zurück?",
+          "answer": "Oft ja. Gerade Backpacker zahlen während des Jahres häufig mehr Steuern als nötig, da Arbeitgeber zum Teil pauschale Steuersätze anwenden. Mit einer korrekt eingereichten Steuererklärung kannst du dir zu viel gezahlte Beträge zurückholen. Wie viel du zurückbekommst, hängt von deinem Einkommen und deiner individuellen Situation ab."
+        },
+        {
+          "question": "Muss ich in Deutschland auch Steuern zahlen?",
+          "answer": "Das hängt von deinem steuerlichen Wohnsitz ab. Wir prüfen deine Situation und beraten dich, wie du mit Doppelbesteuerung umgehen kannst."
+        }
+      ]
+    },
+    "cta": {
+      "headline": "Bereit für deine Steuererklärung?",
+      "text": "Vereinbare jetzt ein kostenloses Erstgespräch und erfahre, ob und in welcher Höhe du möglicherweise eine Rückerstattung erhalten kannst.",
+      "buttonText": "Kostenloses Erstgespräch",
+      "buttonHref": "/kontakt"
+    }
+  },
+  "leistungen": {
+    "hero": {
+      "badge": "Unsere Leistungen",
+      "headline": "Steuerliche Expertise für Deutsche in Australien",
+      "subline": "Von der einfachen Steuererklärung bis zur komplexen Beratung — wir decken alle steuerlichen Bedürfnisse ab."
+    },
+    "services": [
+      {
+        "headline": "Australian Tax Returns",
+        "subline": "Unterstützung bei deiner Steuererklärung – effizient und nachvollziehbar",
+        "description": "Wir erstellen deine australische Steuererklärung professionell und unter Berücksichtigung der geltenden ATO-Vorgaben. Dabei achten wir darauf, alle relevanten Angaben korrekt zu erfassen und mögliche steuerliche Vorteile angemessen zu berücksichtigen.",
+        "includes": [
+          "Strukturierte Erfassung deiner Einkünfte und möglicher abzugsfähiger Positionen",
+          "Elektronische Einreichung (Lodgement) beim ATO",
+          "Bearbeitung und Einreichung innerhalb von weniger als 10 Werktagen"
+        ],
+        "icon": "receipt"
+      },
+      {
+        "headline": "Superannuation Auszahlung",
+        "subline": "Unterstützung bei der Auszahlung deiner Superannuation-Beiträge",
+        "description": "Wenn du Australien verlässt, kannst du dir deine angesammelten Superannuation-Beiträge über einen DASP-Antrag auszahlen lassen. Wir helfen dir beim Prozess.",
+        "includes": [
+          "Unterstützung bei der Einreichung des DASP-Antrags",
+          "Überweisung der Gelder auf dein angegebenes Bankkonto"
+        ],
+        "icon": "piggybank"
+      },
+      {
+        "headline": "TFN & ABN Service",
+        "subline": "Schnell startklar in Australien",
+        "description": "Die Steuernummer (TFN) ist für jede Beschäftigung in Australien unerlässlich, und als Selbständiger (Contractor) benötigst du möglicherweise eine Australian Business Number (ABN). Wir kümmern uns um die schnelle Abwicklung des Antragsverfahrens.",
+        "includes": [
+          "Beantragung einer TFN-Nummer beim ATO",
+          "ABN-Registrierung für Selbständige (Contractor)",
+          "Prüfung deiner Situation, um festzustellen, ob weitere Registrierungen erforderlich sind (z. B. Umsatzsteuer)"
+        ],
+        "icon": "id"
+      },
+      {
+        "headline": "Individuelle Steuerberatung",
+        "subline": "Eine maßgeschneiderte Beratung für deine persönliche Situation",
+        "description": "Ob Doppelbesteuerung, Tax Residency oder internationale Einkommensströme — unsere Experten beraten dich individuell und finden die optimale Lösung.",
+        "includes": [
+          "Steuerliche Residency-Analyse",
+          "Doppelbesteuerungsabkommen DE/AU",
+          "Beratung für Expats & Digital Nomads"
+        ],
+        "icon": "compass"
+      }
+    ],
+    "process": {
+      "badge": "Unser Prozess",
+      "headline": "So einfach geht's",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Ersteinschätzung",
+          "description": "Schildere uns deine Situation in einem kostenlosen Erstgespräch. Wir analysieren deinen steuerlichen Status und beraten dich zu den nächsten Schritten."
+        },
+        {
+          "number": "02",
+          "title": "Dokumente hochladen",
+          "description": "Lade deine Unterlagen sicher über unser Portal hoch. Wir sagen dir genau, welche Dokumente wir brauchen."
+        },
+        {
+          "number": "03",
+          "title": "Experten-Bearbeitung",
+          "description": "Unsere zertifizierten Steuerberater erstellen deine Steuererklärung und optimieren deine Rückerstattung."
+        },
+        {
+          "number": "04",
+          "title": "Auszahlung",
+          "description": "Wir reichen die Unterlagen beim ATO ein, und du erhältst deine Rückerstattung direkt auf dein Konto."
+        }
+      ]
+    },
+    "cta": {
+      "headline": "Welcher Service passt zu dir?",
+      "text": "Wir finden gemeinsam die beste Lösung für deine steuerliche Situation in Australien.",
+      "buttonText": "Kostenlose Erstberatung",
+      "buttonHref": "/kontakt"
+    }
+  },
+  "ueberUns": {
+    "hero": {
+      "badge": "Über uns",
+      "headline": "Die Brücke zwischen zwei Steuerwelten",
+      "subline": "Gegründet von deutschen Expats und Australiern mit Erfahrung in der Steuerberatung – für Deutsche in Australien."
+    },
+    "story": {
+      "headline": "Unsere Geschichte",
+      "paragraphs": [
+        "DownUnder Steuerberatung entstand aus den persönlichen Erfahrungen eines unserer Mitbegründer. Als er als Deutscher nach Australien zog, stellte er fest: Das australische Steuersystem ist komplex, die Informationen auf Deutsch kaum vorhanden, und professionelle Hilfe schwer zu finden.",
+        "Mit unserem Hintergrund in den Bereichen Steuern und Accounting haben wir uns entschlossen, genau diese Lücke zu schließen. Wir bieten die Hilfe, die wir uns damals gewünscht hätten – verständlich, digital und auf Deutsch."
+      ]
+    },
+    "differentiators": [
+      {
+        "title": "Eigene Erfahrung",
+        "description": "Wir kennen die Herausforderungen als deutsche Expats in Australien aus erster Hand."
+      },
+      {
+        "title": "Steuerkompetenz",
+        "description": "Unsere Beratung basiert auf fundiertem Fachwissen in den Bereichen Steuern und Accounting."
+      },
+      {
+        "title": "100 % digital",
+        "description": "Komplett digitaler Prozess – egal, ob du in den Städten, am Strand oder im Outback Australiens bist."
+      }
+    ],
+    "team": {
+      "headline": "Die Gründer",
+      "members": [
+        {
+          "name": "Josh",
+          "role": "Mitbegründer",
+          "initials": "JD",
+          "description": "Josh arbeitet seit über sechs Jahren bei Wirtschaftsprüfungsgesellschaften in Australien. Er hat einen Bachelor-Abschluss in Wirtschaftswissenschaften mit Schwerpunkt Accounting und wurde kürzlich Mitglied der Chartered Accountants Australia and New Zealand. Er war Mitbegründer von DownUnder Steuerberatung, um Deutschen das australische Steuersystem näherzubringen."
+        },
+        {
+          "name": "Tim",
+          "role": "Mitbegründer",
+          "initials": "TD",
+          "description": "Tim hat sowohl in Deutschland als auch in Australien in der Wirtschaftsprüfung gearbeitet. Als deutscher Expat verwirklichte er sich vor einigen Jahren seinen Traum einer Weltreise und lebt seitdem in Australien. Er bringt praktische Erfahrung und Fachwissen zusammen, da er anfangs selbst als Backpacker die Herausforderungen der grenzüberschreitenden Besteuerung meistern musste. Über DownUnder Steuerberatung gibt er nun nützliche steuerliche Hilfe an Deutsche in Australien weiter."
+        }
+      ]
+    },
+    "certifications": {
+      "headline": "Unsere Standards",
+      "items": [
+        "Zertifizierter Tax Agent in Australien",
+        "Deutsche Muttersprachler",
+        "Digitaler Prozess",
+        "Geschützte Daten unter dem australischen Datenschutzgesetz (1988)"
+      ]
+    },
+    "cta": {
+      "headline": "Lerne uns kennen",
+      "text": "Vereinbare ein unverbindliches Erstgespräch mit unserem Team.",
+      "buttonText": "Termin vereinbaren",
+      "buttonHref": "/kontakt"
+    }
+  },
+  "kontakt": {
+    "hero": {
+      "badge": "Kontakt",
+      "headline": "Wir freuen uns auf deine Nachricht",
+      "subline": "Ob Frage, Anliegen oder Erstberatung — wir bemühen uns, dir innerhalb von 24 Stunden zu antworten."
+    },
+    "form": {
+      "labels": {
+        "name": "Name",
+        "email": "E-Mail",
+        "topic": "Betreff",
+        "message": "Nachricht"
+      },
+      "placeholders": {
+        "name": "Dein vollständiger Name",
+        "email": "deine@email.com",
+        "topic": "Bitte wähle ein Thema",
+        "message": "Wie können wir dir helfen?"
+      },
+      "topics": [
+        "Steuererklärung",
+        "Superannuation",
+        "TFN / ABN",
+        "Beratung",
+        "Sonstiges"
+      ],
+      "submitText": "Nachricht senden",
+      "successText": "Nachricht gesendet!",
+      "privacyNote": "Wir antworten in der Regel innerhalb von 24 Stunden an Werktagen. Mit dem Absenden erklärst du dich mit unserer Datenschutzerklärung einverstanden.",
+      "privacyLinkText": "Datenschutzerklärung",
+      "privacyLinkHref": "/datenschutz"
+    },
+    "directContact": {
+      "headline": "Direkt erreichen",
+      "email": {
+        "label": "E-Mail",
+        "value": "hello@downunder-steuerberatung.com"
+      },
+      "whatsapp": {
+        "label": "WhatsApp",
+        "value": "Nummer wird in Kürze ergänzt"
+      },
+      "officeHours": {
+        "label": "Telefonzeiten",
+        "value": "Mo–Fr, 9:00–17:00 (AEST)"
+      }
+    },
+    "cta": {
+      "headline": "Lieber direkt sprechen?",
+      "text": "Vereinbare ein kostenloses Erstgespräch per Video-Call.",
+      "buttonText": "Video-Call buchen",
+      "_note": "TODO: buttonHref should be a Cal.com scheduling link instead of /kontakt",
+      "buttonHref": "#cal-booking"
+    }
+  }
+}

@@ -1,49 +1,26 @@
 ---
+import content from '../data/content.json';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const team = [
-  {
-    name: 'Josh',
-    role: 'Co-Founder',
-    initials: 'J',
-    color: 'var(--color-primary)',
-    description: 'Studium in Finance/Banking in Deutschland. Nach der Auswanderung nach Australien die Komplexität des australischen Steuersystems am eigenen Leib erfahren. Gründete DownUnder, um anderen Deutschen den Weg zu erleichtern.',
-  },
-  {
-    name: 'Tim',
-    role: 'Co-Founder',
-    initials: 'T',
-    color: 'var(--color-primary-container)',
-    description: 'Background in Banking und Finanzwesen. Als deutscher Expat in Australien die Herausforderungen der grenzüberschreitenden Besteuerung selbst gemeistert. Bringt praktische Erfahrung und Fachwissen zusammen.',
-  },
-];
+const page = content.ueberUns;
 
-const differentiators = [
-  {
-    title: 'Eigene Erfahrung',
-    description: 'Wir kennen die Herausforderungen als deutsche Expats in Australien aus erster Hand.',
-  },
-  {
-    title: 'Finance-Expertise',
-    description: 'Fundiertes Fachwissen aus Banking und Finanzwesen als Grundlage unserer Beratung.',
-  },
-  {
-    title: '100% Digital',
-    description: 'Komplett digitaler Prozess — egal ob du in Sydney, Melbourne oder im Outback bist.',
-  },
-];
+const teamColors: Record<string, string> = {
+  Josh: 'var(--color-primary)',
+  Tim: 'var(--color-primary-container)',
+};
 
-const certifications = [
-  'Finance Background',
-  'Deutsche Muttersprachler',
-  'GDPR Konform',
-  'Digitaler Prozess',
-];
+const team = page.team.members.map((member) => ({
+  ...member,
+  color: teamColors[member.name] || 'var(--color-primary)',
+}));
+
+const differentiators = page.differentiators;
+const certifications = page.certifications.items;
 ---
 
 <BaseLayout
-  title="Über uns"
-  description="Lernen Sie das Team von DownUnder Steuerberatung kennen — gegründet von deutschen Expats mit Finance-Background, für Deutsche in Australien."
+  title={content.meta.ueberUns.title}
+  description={content.meta.ueberUns.description}
 >
 
   <!-- Hero -->
@@ -54,13 +31,13 @@ const certifications = [
         class="text-sm font-semibold uppercase tracking-widest mb-4"
         style="color: var(--color-secondary-container); font-family: var(--font-display);"
       >
-        Über uns
+        {page.hero.badge}
       </p>
       <h1 class="text-white max-w-3xl">
-        Die Brücke zwischen zwei Steuerwelten
+        {page.hero.headline}
       </h1>
       <p class="mt-5 text-lg max-w-2xl leading-relaxed" style="color: var(--color-primary-fixed-dim);">
-        Gegründet von deutschen Expats mit Finance-Background — für Deutsche in Australien.
+        {page.hero.subline}
       </p>
     </div>
   </section>
@@ -69,13 +46,15 @@ const certifications = [
   <section class="py-20 md:py-28" style="background-color: var(--color-background);">
     <div class="mx-auto max-w-7xl px-5 sm:px-8">
       <div class="max-w-3xl">
-        <h2 class="mb-8">Unsere Geschichte</h2>
-        <p class="text-lg leading-relaxed mb-6" style="color: var(--color-on-surface-variant);">
-          DownUnder Steuerberatung wurde aus eigener Erfahrung geboren. Als wir selbst als Deutsche nach Australien ausgewandert sind, haben wir schnell gemerkt: Das australische Steuersystem ist komplex, die Informationen auf Deutsch kaum vorhanden, und professionelle Hilfe schwer zu finden.
-        </p>
-        <p class="text-lg leading-relaxed" style="color: var(--color-on-surface-variant);">
-          Mit unserem Background in Finance und Banking haben wir beschlossen, genau diese Lücke zu schließen. Wir bieten die Hilfe, die wir uns damals selbst gewünscht hätten — verständlich, digital und auf Deutsch.
-        </p>
+        <h2 class="mb-8">{page.story.headline}</h2>
+        {page.story.paragraphs.map((paragraph, i) => (
+          <p
+            class:list={['text-lg leading-relaxed', { 'mb-6': i < page.story.paragraphs.length - 1 }]}
+            style="color: var(--color-on-surface-variant);"
+          >
+            {paragraph}
+          </p>
+        ))}
       </div>
     </div>
   </section>
@@ -102,7 +81,7 @@ const certifications = [
   <!-- Team -->
   <section class="py-20 md:py-28" style="background-color: var(--color-background);">
     <div class="mx-auto max-w-7xl px-5 sm:px-8">
-      <h2 class="mb-12 md:mb-16">Die Gründer</h2>
+      <h2 class="mb-12 md:mb-16">{page.team.headline}</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
         {team.map((member) => (
           <div
@@ -137,7 +116,7 @@ const certifications = [
   <!-- Certifications -->
   <section class="py-20 md:py-28" style="background-color: var(--color-surface-low);">
     <div class="mx-auto max-w-7xl px-5 sm:px-8">
-      <h2 class="mb-12 text-center">Unsere Standards</h2>
+      <h2 class="mb-12 text-center">{page.certifications.headline}</h2>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl mx-auto">
         {certifications.map((cert) => (
           <div
@@ -165,16 +144,16 @@ const certifications = [
   <!-- CTA -->
   <section class="py-20 md:py-28" style="background: var(--gradient-hero);">
     <div class="mx-auto max-w-7xl px-5 sm:px-8 text-center">
-      <h2 class="text-white mb-4">Lerne uns kennen</h2>
+      <h2 class="text-white mb-4">{page.cta.headline}</h2>
       <p class="text-lg max-w-xl mx-auto mb-10 leading-relaxed" style="color: var(--color-primary-fixed-dim);">
-        Vereinbare ein unverbindliches Erstgespräch mit unserem Team.
+        {page.cta.text}
       </p>
       <a
-        href="/kontakt"
+        href={page.cta.buttonHref}
         class="inline-flex items-center gap-2 px-8 py-4 rounded-[var(--radius-xl)] text-base font-semibold transition-all duration-200 hover:shadow-[var(--shadow-elevated)]"
         style="background: var(--color-secondary-container); color: var(--color-on-secondary-container);"
       >
-        Termin vereinbaren
+        {page.cta.buttonText}
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M3.33 8H12.67M12.67 8L8.67 4M12.67 8L8.67 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>

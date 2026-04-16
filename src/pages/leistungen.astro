@@ -1,82 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import content from '../data/content.json';
 
-const services = [
-  {
-    headline: 'Australian Tax Returns',
-    subline: 'Maximale Rückerstattung, minimaler Aufwand',
-    description: 'Wir erstellen deine australische Steuererklärung professionell und sorgen dafür, dass du die maximale Rückerstattung erhältst. Vollständig ATO-konform.',
-    includes: [
-      'Einkommenserfassung & Abzugsoptimierung',
-      'Lodgement beim ATO',
-      'Durchschnittlich $2.500+ Rückerstattung',
-      'Bearbeitung in unter 10 Werktagen',
-    ],
-    icon: 'receipt',
-  },
-  {
-    headline: 'Superannuation Rückerstattung',
-    subline: 'Deine Rentenrücklagen zurückholen',
-    description: 'Wenn du Australien verlässt, kannst du dir deine angesammelten Superannuation-Beiträge über einen DASP-Antrag auszahlen lassen. Wir übernehmen den gesamten Prozess.',
-    includes: [
-      'DASP-Antragsstellung',
-      'Kommunikation mit Super Funds',
-      'Steuerliche Optimierung',
-      'Auszahlung auf deutsches oder australisches Konto',
-    ],
-    icon: 'piggybank',
-  },
-  {
-    headline: 'TFN & ABN Service',
-    subline: 'Schnell startklar in Australien',
-    description: 'Die Tax File Number (TFN) und Australian Business Number (ABN) sind die Grundlage für jede Beschäftigung in Australien. Wir kümmern uns um die schnelle Beantragung.',
-    includes: [
-      'TFN-Beantragung beim ATO',
-      'ABN-Registrierung für Selbständige',
-      'Beratung zur richtigen Steuerklasse',
-      'Express-Bearbeitung verfügbar',
-    ],
-    icon: 'id',
-  },
-  {
-    headline: 'Individuelle Steuerberatung',
-    subline: 'Für komplexe steuerliche Situationen',
-    description: 'Ob Doppelbesteuerung, Tax Residency oder internationale Einkommensströme — unsere Experten beraten dich individuell und finden die optimale Lösung.',
-    includes: [
-      'Steuerliche Residency-Analyse',
-      'Doppelbesteuerungsabkommen DE/AU',
-      'Beratung für Expats & Digital Nomads',
-      'Vermögensstrukturierung & Investments',
-    ],
-    icon: 'compass',
-  },
-];
-
-const steps = [
-  {
-    number: '01',
-    title: 'Ersteinschätzung',
-    description: 'Schildere uns deine Situation in einem kostenlosen Erstgespräch. Wir analysieren deinen steuerlichen Status und beraten dich zu den nächsten Schritten.',
-  },
-  {
-    number: '02',
-    title: 'Dokumente hochladen',
-    description: 'Lade deine Unterlagen sicher über unser Portal hoch. Wir sagen dir genau, welche Dokumente wir brauchen.',
-  },
-  {
-    number: '03',
-    title: 'Experten-Bearbeitung',
-    description: 'Unsere zertifizierten Steuerberater erstellen deine Steuererklärung und optimieren deine Rückerstattung.',
-  },
-  {
-    number: '04',
-    title: 'Auszahlung',
-    description: 'Wir reichen beim ATO ein und du erhältst deine Rückerstattung direkt auf dein Konto — in der Regel innerhalb von 10 Tagen.',
-  },
-];
+const services = content.leistungen.services;
+const steps = content.leistungen.process.steps;
 ---
 
-<BaseLayout title="Leistungen" description="Steuerliche Expertise für Deutsche in Australien — Tax Returns, Superannuation, TFN/ABN und individuelle Beratung.">
+<BaseLayout title={content.meta.leistungen.title} description={content.meta.leistungen.description}>
 
   <!-- ===== HERO ===== -->
   <section class="relative overflow-hidden py-20 md:py-28" style="background: var(--gradient-hero);">
@@ -89,13 +19,13 @@ const steps = [
           class="inline-block text-xs font-semibold uppercase tracking-[0.15em] mb-5 px-3.5 py-1.5 rounded-[var(--radius-full)]"
           style="background: rgba(167, 200, 255, 0.12); color: var(--color-primary-fixed-dim); font-family: var(--font-display);"
         >
-          Unsere Leistungen
+          {content.leistungen.hero.badge}
         </span>
         <h1 class="text-white mb-5">
-          Steuerliche Expertise für Deutsche in Australien
+          {content.leistungen.hero.headline}
         </h1>
         <p class="text-lg md:text-xl leading-relaxed max-w-2xl" style="color: var(--color-primary-fixed-dim);">
-          Von der einfachen Steuererklärung bis zur komplexen Beratung — wir decken alle steuerlichen Bedürfnisse ab.
+          {content.leistungen.hero.subline}
         </p>
       </div>
     </div>
@@ -240,9 +170,9 @@ const steps = [
           class="inline-block text-xs font-semibold uppercase tracking-[0.15em] mb-5 px-3.5 py-1.5 rounded-[var(--radius-full)]"
           style="background-color: var(--color-primary-fixed); color: var(--color-primary); font-family: var(--font-display);"
         >
-          Unser Prozess
+          {content.leistungen.process.badge}
         </span>
-        <h2 class="mb-4">So einfach geht's</h2>
+        <h2 class="mb-4">{content.leistungen.process.headline}</h2>
       </div>
 
       <!-- Steps -->
@@ -279,17 +209,17 @@ const steps = [
     <div class="mx-auto max-w-7xl px-5 sm:px-8 text-center relative z-10">
       <div class="max-w-2xl mx-auto">
         <h2 class="text-white mb-5">
-          Welcher Service passt zu dir?
+          {content.leistungen.cta.headline}
         </h2>
         <p class="text-lg leading-relaxed mb-10" style="color: var(--color-primary-fixed-dim);">
-          Wir finden gemeinsam die beste Lösung für deine steuerliche Situation in Australien.
+          {content.leistungen.cta.text}
         </p>
         <a
-          href="/kontakt"
+          href={content.leistungen.cta.buttonHref}
           class="inline-flex items-center gap-2.5 px-8 py-4 rounded-[var(--radius-xl)] text-base font-semibold transition-all duration-200 hover:shadow-[var(--shadow-elevated)] hover:scale-[1.02]"
           style="background: var(--color-secondary-container); color: var(--color-on-secondary-container);"
         >
-          Kostenlose Erstberatung
+          {content.leistungen.cta.buttonText}
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
           </svg>
