@@ -1,0 +1,36 @@
+---
+import { getLocaleFromPath, getAlternatePath, getAlternateLocale } from '../lib/i18n';
+
+const locale = getLocaleFromPath(Astro.url.pathname);
+const altLocale = getAlternateLocale(locale);
+const altPath = getAlternatePath(Astro.url.pathname);
+const label = altLocale.toUpperCase();
+---
+
+<a
+  href={altPath}
+  class="inline-flex items-center gap-1.5 text-sm font-semibold uppercase tracking-wide transition-colors duration-200 hover:text-[var(--color-primary)]"
+  style="color: var(--color-on-surface-variant);"
+  aria-label={locale === 'de' ? 'Switch to English' : 'Auf Deutsch wechseln'}
+>
+  {altLocale === 'en' ? (
+    <!-- UK/AU Flag -->
+    <svg width="20" height="14" viewBox="0 0 60 42" fill="none" xmlns="http://www.w3.org/2000/svg" class="rounded-[2px] shadow-sm">
+      <rect width="60" height="42" fill="#00247D"/>
+      <path d="M0 0L24 17.5M24 24.5L0 42M60 0L36 17.5M36 24.5L60 42" stroke="white" stroke-width="5"/>
+      <path d="M0 0L24 17.5M24 24.5L0 42M60 0L36 17.5M36 24.5L60 42" stroke="#CF142B" stroke-width="2.5"/>
+      <rect x="25.5" y="0" width="9" height="42" fill="white"/>
+      <rect x="0" y="16.5" width="60" height="9" fill="white"/>
+      <rect x="27" y="0" width="6" height="42" fill="#CF142B"/>
+      <rect x="0" y="18" width="60" height="6" fill="#CF142B"/>
+    </svg>
+  ) : (
+    <!-- German Flag -->
+    <svg width="20" height="14" viewBox="0 0 60 42" fill="none" xmlns="http://www.w3.org/2000/svg" class="rounded-[2px] shadow-sm">
+      <rect width="60" height="14" fill="#000000"/>
+      <rect y="14" width="60" height="14" fill="#DD0000"/>
+      <rect y="28" width="60" height="14" fill="#FFCC00"/>
+    </svg>
+  )}
+  {label}
+</a>

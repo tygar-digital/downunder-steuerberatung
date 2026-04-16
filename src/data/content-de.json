@@ -371,5 +371,151 @@
       "_note": "TODO: buttonHref should be a Cal.com scheduling link instead of /kontakt",
       "buttonHref": "#cal-booking"
     }
+  },
+  "datenschutz": {
+    "hero": {
+      "badge": "Rechtliches",
+      "headline": "Datenschutzerklärung"
+    },
+    "sections": [
+      {
+        "title": "1. Datenschutz auf einen Blick",
+        "content": [
+          {
+            "subtitle": "Allgemeine Hinweise",
+            "text": "Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können."
+          }
+        ]
+      },
+      {
+        "title": "2. Verantwortliche Stelle",
+        "content": [
+          {
+            "text": "Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:"
+          },
+          {
+            "address": [
+              "DownUnder Steuerberatung",
+              "[Adresse]",
+              "E-Mail: hello@downunder-steuerberatung.com"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "3. Datenerfassung auf dieser Website",
+        "content": [
+          {
+            "subtitle": "Kontaktformular",
+            "text": "Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter."
+          },
+          {
+            "subtitle": "Server-Log-Dateien",
+            "text": "Der Provider der Seiten erhebt und speichert automatisch Informationen in so genannten Server-Log-Dateien, die Ihr Browser automatisch an uns übermittelt. Dies sind: Browsertyp und -version, verwendetes Betriebssystem, Referrer URL, Hostname des zugreifenden Rechners, Uhrzeit der Serveranfrage, IP-Adresse."
+          }
+        ]
+      },
+      {
+        "title": "4. Hosting",
+        "content": [
+          {
+            "text": "Diese Website wird bei einem externen Dienstleister gehostet (Hoster). Die personenbezogenen Daten, die auf dieser Website erfasst werden, werden auf den Servern des Hosters gespeichert. Hierbei kann es sich v.a. um IP-Adressen, Kontaktanfragen, Meta- und Kommunikationsdaten, Vertragsdaten, Kontaktdaten, Namen, Webseitenzugriffe und sonstige Daten, die über eine Website generiert werden, handeln."
+          }
+        ]
+      },
+      {
+        "title": "5. Ihre Rechte",
+        "content": [
+          {
+            "text": "Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung oder Löschung dieser Daten zu verlangen."
+          },
+          {
+            "list": [
+              "Recht auf Auskunft (Art. 15 DSGVO)",
+              "Recht auf Berichtigung (Art. 16 DSGVO)",
+              "Recht auf Löschung (Art. 17 DSGVO)",
+              "Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)",
+              "Recht auf Datenübertragbarkeit (Art. 20 DSGVO)",
+              "Widerspruchsrecht (Art. 21 DSGVO)"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "6. Analyse-Tools & Cookies",
+        "content": [
+          {
+            "text": "Diese Website verwendet derzeit keine Analyse-Tools oder Tracking-Cookies. Sollte sich dies ändern, werden wir diese Datenschutzerklärung entsprechend aktualisieren und Sie vor der Aktivierung um Ihre Einwilligung bitten."
+          }
+        ]
+      }
+    ],
+    "footer": "Stand: April 2026. Diese Datenschutzerklärung wird regelmäßig aktualisiert."
+  },
+  "impressum": {
+    "hero": {
+      "badge": "Rechtliches",
+      "headline": "Impressum"
+    },
+    "introNote": "Angaben gemäß § 5 TMG",
+    "sections": [
+      {
+        "title": "Firmenname",
+        "content": [
+          "DownUnder Steuerberatung",
+          "[Vollständiger Firmenname hier eintragen]"
+        ]
+      },
+      {
+        "title": "Adresse",
+        "content": [
+          "[Straße und Hausnummer]",
+          "[PLZ und Ort]",
+          "Deutschland"
+        ]
+      },
+      {
+        "title": "Kontakt",
+        "content": [
+          "E-Mail: hello@downunder-steuerberatung.com",
+          "Telefon: [Telefonnummer]"
+        ]
+      },
+      {
+        "title": "Vertreten durch",
+        "content": [
+          "[Name des Geschäftsführers / Inhabers]"
+        ]
+      },
+      {
+        "title": "Registereintrag",
+        "content": [
+          "Registergericht: [Amtsgericht]",
+          "Registernummer: [HRB-Nummer]"
+        ]
+      },
+      {
+        "title": "Umsatzsteuer-ID",
+        "content": [
+          "Umsatzsteuer-Identifikationsnummer gemäß §27a UStG:",
+          "[USt-IdNr.]"
+        ]
+      },
+      {
+        "title": "Berufsbezeichnung & Aufsichtsbehörde",
+        "content": [
+          "Berufsbezeichnung: Steuerberater",
+          "Zuständige Kammer: [Steuerberaterkammer]",
+          "Verliehen in: Deutschland"
+        ]
+      },
+      {
+        "title": "Streitschlichtung",
+        "content": [
+          "Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit.",
+          "Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen."
+        ]
+      }
+    ]
   }
 }

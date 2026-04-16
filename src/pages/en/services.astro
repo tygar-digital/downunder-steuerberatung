@@ -1,0 +1,7 @@
+---
+import LeistungenPage from '../../components/pages/LeistungenPage.astro';
+import { getContent } from '../../lib/i18n';
+
+const content = getContent('en');
+---
+<LeistungenPage content={content} locale="en" />

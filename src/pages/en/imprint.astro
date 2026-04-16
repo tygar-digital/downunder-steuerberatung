@@ -1,0 +1,8 @@
+---
+import ImpressumPage from '../../components/pages/ImpressumPage.astro';
+import { getContent } from '../../lib/i18n';
+
+const content = getContent('en');
+---
+
+<ImpressumPage content={content} locale="en" />

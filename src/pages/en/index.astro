@@ -1,0 +1,7 @@
+---
+import HomePage from '../../components/pages/HomePage.astro';
+import { getContent } from '../../lib/i18n';
+
+const content = getContent('en');
+---
+<HomePage content={content} locale="en" />

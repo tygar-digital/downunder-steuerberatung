@@ -1,0 +1,7 @@
+---
+import KontaktPage from '../../components/pages/KontaktPage.astro';
+import { getContent } from '../../lib/i18n';
+
+const content = getContent('en');
+---
+<KontaktPage content={content} locale="en" />

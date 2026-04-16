@@ -1,0 +1,434 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+interface Props {
+  content: any;
+  locale: string;
+}
+
+const { content, locale } = Astro.props;
+const { home, meta } = content;
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": content.home.faq.items.map((item) => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.answer
+    }
+  }))
+};
+---
+
+<BaseLayout title={meta.home.title} schema={faqSchema}>
+
+  <!-- ═══════════ HERO ═══════════ -->
+  <section class="relative overflow-hidden" style="background: var(--color-primary);">
+    <!-- Background Image -->
+    <div class="absolute inset-0" aria-hidden="true">
+      <img
+        src="/images/hero-sydney.webp"
+        alt=""
+        class="w-full h-full object-cover"
+        loading="eager"
+        fetchpriority="high"
+      />
+    </div>
+    <!-- Gradient Overlay -->
+    <div class="absolute inset-0" style="background: linear-gradient(160deg, rgba(0,30,64,0.80) 0%, rgba(0,51,102,0.72) 60%, rgba(26,74,122,0.65) 100%);" aria-hidden="true"></div>
+    <!-- Subtle decorative shapes -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+      <div class="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full opacity-[0.04]" style="background: white;"></div>
+      <div class="absolute bottom-0 left-0 w-[300px] h-[300px] rounded-full opacity-[0.03]" style="background: white; transform: translate(-30%, 40%);"></div>
+    </div>
+
+    <div class="relative mx-auto max-w-7xl px-5 sm:px-8 pt-20 pb-20 md:pt-28 md:pb-28 lg:pt-36 lg:pb-32">
+      <div class="max-w-3xl">
+        <h1 class="text-white mb-6" style="font-family: var(--font-display);">
+          {home.hero.headline}
+        </h1>
+        <p class="text-lg md:text-xl leading-relaxed mb-10 max-w-2xl" style="color: rgba(255,255,255,0.82); font-family: var(--font-body);">
+          {home.hero.subline}
+        </p>
+
+        <!-- CTAs -->
+        <div class="flex flex-col sm:flex-row gap-4 mb-14">
+          <a
+            href={home.hero.ctaPrimary.href}
+            class="inline-flex items-center justify-center px-7 py-3.5 rounded-[var(--radius-xl)] text-base font-semibold transition-all duration-200 hover:brightness-105 hover:shadow-lg"
+            style="background-color: var(--color-secondary-container); color: var(--color-on-secondary-container);"
+          >
+            {home.hero.ctaPrimary.text}
+          </a>
+          <a
+            href={home.hero.ctaSecondary.href}
+            class="inline-flex items-center justify-center px-7 py-3.5 rounded-[var(--radius-xl)] text-base font-semibold transition-all duration-200 hover:bg-white/10"
+            style="border: 1.5px solid rgba(255,255,255,0.35); color: white;"
+          >
+            {home.hero.ctaSecondary.text}
+          </a>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="flex flex-wrap gap-x-8 gap-y-4">
+          <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-full flex items-center justify-center" style="background: rgba(255,255,255,0.1);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m2 12 10-7 10 7"/><path d="m2 12 10 7 10-7"/></svg>
+            </div>
+            <span class="text-sm font-medium text-white/80">{home.hero.trustBadges[0]}</span>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-full flex items-center justify-center" style="background: rgba(255,255,255,0.1);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+            </div>
+            <span class="text-sm font-medium text-white/80">{home.hero.trustBadges[1]}</span>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-full flex items-center justify-center" style="background: rgba(255,255,255,0.1);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/></svg>
+            </div>
+            <span class="text-sm font-medium text-white/80">{home.hero.trustBadges[2]}</span>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-full flex items-center justify-center" style="background: rgba(255,255,255,0.1);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0"/><path d="M3.6 9h16.8"/><path d="M3.6 15h16.8"/><path d="M12 3a15.3 15.3 0 0 1 4 9 15.3 15.3 0 0 1-4 9 15.3 15.3 0 0 1-4-9 15.3 15.3 0 0 1 4-9"/></svg>
+            </div>
+            <span class="text-sm font-medium text-white/80">{home.hero.trustBadges[3]}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════ KURZVORSTELLUNG ═══════════ -->
+  <section style="background-color: var(--color-background);">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8 py-20 md:py-28">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div class="lg:col-span-7">
+          <span
+            class="inline-block text-xs font-semibold uppercase tracking-[0.15em] mb-4 px-3 py-1.5 rounded-[var(--radius-full)]"
+            style="color: var(--color-primary-container); background-color: var(--color-primary-fixed); font-family: var(--font-display);"
+          >
+            {home.about.badge}
+          </span>
+          <h2 class="mb-6" style="color: var(--color-on-surface); font-family: var(--font-display);">
+            {home.about.headline}
+          </h2>
+          <p class="text-lg leading-relaxed" style="color: var(--color-on-surface-variant); font-family: var(--font-body);">
+            {home.about.text}
+          </p>
+        </div>
+        <div class="lg:col-span-5">
+          <!-- Visual — Beach photo + gradient overlay + flag pictograms -->
+          <div class="relative">
+            <div class="aspect-[4/3] rounded-[var(--radius-xl)] overflow-hidden relative">
+              <!-- Background photo -->
+              <img
+                src="/images/beach-travelers.webp"
+                alt="Junge Reisende lachen zusammen am australischen Strand"
+                class="absolute inset-0 w-full h-full object-cover"
+                loading="eager"
+              />
+              <!-- Blue gradient overlay -->
+              <div class="absolute inset-0" style="background: var(--gradient-hero); opacity: 0.7;"></div>
+              <!-- Flag pictograms -->
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="text-center px-8">
+                  <div class="flex justify-center gap-3 mb-4">
+                    <!-- DE Flag -->
+                    <div class="flex flex-col w-10 h-7 rounded overflow-hidden shadow-md">
+                      <div class="flex-1 bg-black"></div>
+                      <div class="flex-1 bg-red-600"></div>
+                      <div class="flex-1 bg-yellow-400"></div>
+                    </div>
+                    <!-- Arrow -->
+                    <svg class="self-center" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    <!-- AU Flag -->
+                    <div class="w-10 h-7 rounded overflow-hidden shadow-md" style="background: #00008B;">
+                      <svg width="40" height="28" viewBox="0 0 40 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Blue background -->
+                        <rect width="40" height="28" fill="#00008B"/>
+                        <!-- Union Jack area (top-left quarter) -->
+                        <rect width="20" height="14" fill="#00008B"/>
+                        <!-- Union Jack: White diagonals -->
+                        <polygon points="0,0 8,6 6,6 0,2" fill="white"/>
+                        <polygon points="20,0 12,6 14,6 20,2" fill="white"/>
+                        <polygon points="0,14 8,8 6,8 0,12" fill="white"/>
+                        <polygon points="20,14 12,8 14,8 20,12" fill="white"/>
+                        <!-- Union Jack: Red diagonals (thinner) -->
+                        <polygon points="0,0 7,6 6,6 0,1" fill="#CC0000"/>
+                        <polygon points="20,0 13,6 14,6 20,1" fill="#CC0000"/>
+                        <polygon points="0,14 7,8 6,8 0,13" fill="#CC0000"/>
+                        <polygon points="20,14 13,8 14,8 20,13" fill="#CC0000"/>
+                        <!-- Union Jack: White cross -->
+                        <rect x="8" y="0" width="4" height="14" fill="white"/>
+                        <rect x="0" y="5" width="20" height="4" fill="white"/>
+                        <!-- Union Jack: Red cross -->
+                        <rect x="9" y="0" width="2" height="14" fill="#CC0000"/>
+                        <rect x="0" y="6" width="20" height="2" fill="#CC0000"/>
+                        <!-- Commonwealth Star (7-pointed, below Union Jack) -->
+                        <polygon points="10,22 10.8,19.5 13,19.5 11.2,17.8 11.8,15.5 10,17 8.2,15.5 8.8,17.8 7,19.5 9.2,19.5" fill="white"/>
+                        <!-- Southern Cross (right half) -->
+                        <polygon points="30,5 30.4,6.2 31.7,6.2 30.6,7 31,8.2 30,7.4 29,8.2 29.4,7 28.3,6.2 29.6,6.2" fill="white"/>
+                        <polygon points="34,10 34.4,11.2 35.7,11.2 34.6,12 35,13.2 34,12.4 33,13.2 33.4,12 32.3,11.2 33.6,11.2" fill="white"/>
+                        <polygon points="30,16 30.4,17.2 31.7,17.2 30.6,18 31,19.2 30,18.4 29,19.2 29.4,18 28.3,17.2 29.6,17.2" fill="white"/>
+                        <polygon points="26,11 26.3,12 27.4,12 26.5,12.6 26.8,13.6 26,13 25.2,13.6 25.5,12.6 24.6,12 25.7,12" fill="white"/>
+                        <!-- Small 5th star of Southern Cross -->
+                        <circle cx="31.5" cy="12.5" r="0.6" fill="white"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <p class="text-white/70 text-sm" style="font-family: var(--font-body);">{home.about.visualText}</p>
+                </div>
+              </div>
+            </div>
+            <!-- Floating accent -->
+            <div
+              class="absolute -bottom-4 -left-4 w-24 h-24 rounded-[var(--radius-lg)]"
+              style="background-color: var(--color-secondary-container); opacity: 0.6;"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════ LEISTUNGEN ═══════════ -->
+  <section style="background-color: var(--color-surface-low);">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8 py-20 md:py-28">
+      <div class="max-w-2xl mb-14">
+        <span
+          class="inline-block text-xs font-semibold uppercase tracking-[0.15em] mb-4 px-3 py-1.5 rounded-[var(--radius-full)]"
+          style="color: var(--color-primary-container); background-color: var(--color-primary-fixed); font-family: var(--font-display);"
+        >
+          {home.services.badge}
+        </span>
+        <h2 style="color: var(--color-on-surface); font-family: var(--font-display);">
+          {home.services.headline}
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <!-- Card 1 -->
+        <div
+          class="p-8 lg:p-10 rounded-[var(--radius-lg)] transition-shadow duration-300 hover:shadow-[var(--shadow-elevated)]"
+          style="background-color: var(--color-surface-lowest); box-shadow: var(--shadow-ambient);"
+        >
+          <div
+            class="w-12 h-12 rounded-[var(--radius-md)] flex items-center justify-center mb-6"
+            style="background: var(--color-primary-fixed);"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary-container)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+          </div>
+          <h3 class="mb-3" style="color: var(--color-on-surface); font-family: var(--font-display);">{home.services.items[0].title}</h3>
+          <p class="leading-relaxed" style="color: var(--color-on-surface-variant); font-family: var(--font-body);">
+            {home.services.items[0].description}
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div
+          class="p-8 lg:p-10 rounded-[var(--radius-lg)] transition-shadow duration-300 hover:shadow-[var(--shadow-elevated)]"
+          style="background-color: var(--color-surface-lowest); box-shadow: var(--shadow-ambient);"
+        >
+          <div
+            class="w-12 h-12 rounded-[var(--radius-md)] flex items-center justify-center mb-6"
+            style="background: var(--color-primary-fixed);"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary-container)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <h3 class="mb-3" style="color: var(--color-on-surface); font-family: var(--font-display);">{home.services.items[1].title}</h3>
+          <p class="leading-relaxed" style="color: var(--color-on-surface-variant); font-family: var(--font-body);">
+            {home.services.items[1].description}
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div
+          class="p-8 lg:p-10 rounded-[var(--radius-lg)] transition-shadow duration-300 hover:shadow-[var(--shadow-elevated)]"
+          style="background-color: var(--color-surface-lowest); box-shadow: var(--shadow-ambient);"
+        >
+          <div
+            class="w-12 h-12 rounded-[var(--radius-md)] flex items-center justify-center mb-6"
+            style="background: var(--color-primary-fixed);"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary-container)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <h3 class="mb-3" style="color: var(--color-on-surface); font-family: var(--font-display);">{home.services.items[2].title}</h3>
+          <p class="leading-relaxed" style="color: var(--color-on-surface-variant); font-family: var(--font-body);">
+            {home.services.items[2].description}
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-10">
+        <a
+          href={home.services.linkHref}
+          class="inline-flex items-center gap-2 text-base font-semibold transition-colors duration-200"
+          style="color: var(--color-primary-container); font-family: var(--font-display);"
+        >
+          {home.services.linkText}
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════ PROZESS ═══════════ -->
+  <section id="prozess" style="background-color: var(--color-background);">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8 py-20 md:py-28">
+      <div class="max-w-2xl mb-14">
+        <span
+          class="inline-block text-xs font-semibold uppercase tracking-[0.15em] mb-4 px-3 py-1.5 rounded-[var(--radius-full)]"
+          style="color: var(--color-primary-container); background-color: var(--color-primary-fixed); font-family: var(--font-display);"
+        >
+          {home.process.badge}
+        </span>
+        <h2 style="color: var(--color-on-surface); font-family: var(--font-display);">
+          {home.process.headline}
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+        {home.process.steps.map((step) => (
+          <div class="relative">
+            <div
+              class="text-5xl lg:text-6xl font-extrabold mb-4 leading-none"
+              style="color: var(--color-primary); opacity: 0.12; font-family: var(--font-display);"
+            >{step.number}</div>
+            <h3 class="mb-2" style="color: var(--color-primary); font-family: var(--font-display);">{step.title}</h3>
+            <p class="leading-relaxed" style="color: var(--color-on-surface-variant); font-family: var(--font-body);">
+              {step.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════ FAQ TEASER ═══════════ -->
+  <section style="background-color: var(--color-background);">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8 py-20 md:py-28">
+      <div class="max-w-2xl mb-14">
+        <span
+          class="inline-block text-xs font-semibold uppercase tracking-[0.15em] mb-4 px-3 py-1.5 rounded-[var(--radius-full)]"
+          style="color: var(--color-primary-container); background-color: var(--color-primary-fixed); font-family: var(--font-display);"
+        >
+          {home.faq.badge}
+        </span>
+        <h2 style="color: var(--color-on-surface); font-family: var(--font-display);">
+          {home.faq.headline}
+        </h2>
+      </div>
+
+      <div class="max-w-3xl space-y-3">
+        {content.home.faq.items.map((item) => (
+          <div
+            class="faq-item rounded-[var(--radius-lg)] overflow-hidden transition-shadow duration-200"
+            style="background-color: var(--color-surface-lowest); box-shadow: var(--shadow-float);"
+          >
+            <button
+              class="faq-trigger w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer"
+              aria-expanded="false"
+            >
+              <span class="text-base font-semibold" style="color: var(--color-on-surface); font-family: var(--font-display);">
+                {item.question}
+              </span>
+              <svg class="faq-chevron shrink-0 w-5 h-5 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="var(--color-on-surface-variant)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content" style="max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s ease;">
+              <div class="px-6 pb-6">
+                <p class="leading-relaxed" style="color: var(--color-on-surface-variant); font-family: var(--font-body);">
+                  {item.answer}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════ CTA SECTION ═══════════ -->
+  <section class="relative overflow-hidden" style="background: var(--color-primary);">
+    <!-- Background Image -->
+    <div class="absolute inset-0" aria-hidden="true">
+      <img
+        src="/images/cta-sydney.webp"
+        alt=""
+        class="w-full h-full object-cover"
+        loading="lazy"
+      />
+    </div>
+    <!-- Gradient Overlay -->
+    <div class="absolute inset-0" style="background: linear-gradient(160deg, rgba(0,30,64,0.82) 0%, rgba(0,51,102,0.75) 60%, rgba(26,74,122,0.68) 100%);" aria-hidden="true"></div>
+    <div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+      <div class="absolute -top-20 -left-20 w-[400px] h-[400px] rounded-full opacity-[0.04]" style="background: white;"></div>
+      <div class="absolute -bottom-20 -right-20 w-[300px] h-[300px] rounded-full opacity-[0.03]" style="background: white;"></div>
+    </div>
+
+    <div class="relative mx-auto max-w-7xl px-5 sm:px-8 py-20 md:py-28 text-center">
+      <h2 class="text-white mb-5 max-w-2xl mx-auto" style="font-family: var(--font-display);">
+        {home.cta.headline}
+      </h2>
+      <p class="text-lg md:text-xl leading-relaxed mb-10 max-w-xl mx-auto" style="color: rgba(255,255,255,0.8); font-family: var(--font-body);">
+        {home.cta.text}
+      </p>
+      <a
+        href={home.cta.buttonHref}
+        class="inline-flex items-center justify-center px-8 py-4 rounded-[var(--radius-xl)] text-lg font-semibold transition-all duration-200 hover:brightness-105 hover:shadow-lg"
+        style="background-color: var(--color-secondary-container); color: var(--color-on-secondary-container);"
+      >
+        {home.cta.buttonText}
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<!-- FAQ Accordion Script -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const triggers = document.querySelectorAll('.faq-trigger');
+
+    triggers.forEach((trigger) => {
+      trigger.addEventListener('click', () => {
+        const item = trigger.closest('.faq-item')!;
+        const content = item.querySelector('.faq-content') as HTMLElement;
+        const chevron = item.querySelector('.faq-chevron') as HTMLElement;
+        const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+
+        // Close all others
+        document.querySelectorAll('.faq-item').forEach((otherItem) => {
+          if (otherItem !== item) {
+            const otherContent = otherItem.querySelector('.faq-content') as HTMLElement;
+            const otherChevron = otherItem.querySelector('.faq-chevron') as HTMLElement;
+            const otherTrigger = otherItem.querySelector('.faq-trigger')!;
+            otherContent.style.maxHeight = '0';
+            otherChevron.style.transform = 'rotate(0deg)';
+            otherTrigger.setAttribute('aria-expanded', 'false');
+          }
+        });
+
+        // Toggle current
+        if (isOpen) {
+          content.style.maxHeight = '0';
+          chevron.style.transform = 'rotate(0deg)';
+          trigger.setAttribute('aria-expanded', 'false');
+        } else {
+          content.style.maxHeight = content.scrollHeight + 'px';
+          chevron.style.transform = 'rotate(180deg)';
+          trigger.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  });
+</script>

@@ -1,8 +1,11 @@
 ---
-import content from '../data/content.json';
+import { getLocaleFromPath, getContent } from '../lib/i18n';
 
+const locale = getLocaleFromPath(Astro.url.pathname);
+const content = getContent(locale);
 const currentYear = new Date().getFullYear();
 const { brandName, logoAlt, tagline, sections, copyright } = content.footer;
+const homeHref = locale === 'en' ? '/en/' : '/';
 ---
 
 <footer class="mt-auto" style="background-color: var(--color-primary);">
@@ -11,7 +14,7 @@ const { brandName, logoAlt, tagline, sections, copyright } = content.footer;
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
       <!-- Brand -->
       <div class="lg:col-span-1">
-        <a href="/" class="flex items-center gap-2 mb-5">
+        <a href={homeHref} class="flex items-center gap-2 mb-5">
           <img src="/logo.svg" alt={logoAlt} class="h-10 w-auto" />
           <span class="font-bold text-lg text-white" style="font-family: var(--font-display);">
             {brandName}

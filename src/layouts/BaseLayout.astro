@@ -1,6 +1,7 @@
 ---
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
+import { getLocaleFromPath, getAlternatePath } from '../lib/i18n';
 import '../styles/global.css';
 
 interface Props {
@@ -10,9 +11,19 @@ interface Props {
   schema?: object;
 }
 
+const locale = getLocaleFromPath(Astro.url.pathname);
+const alternatePath = getAlternatePath(Astro.url.pathname);
+
+const defaultDescriptions = {
+  de: 'Steuerberatung für Deutsche in Australien — auf Deutsch, ohne Stress. Tax Returns, Beratung und mehr.',
+  en: 'Tax consulting for Germans in Australia — in German, stress-free. Tax returns, advice and more.',
+};
+
+const skipLabels = { de: 'Zum Inhalt springen', en: 'Skip to content' };
+
 const {
   title,
-  description = 'Steuerberatung für Deutsche in Australien — auf Deutsch, ohne Stress. Tax Returns, Beratung und mehr.',
+  description = defaultDescriptions[locale],
   ogImage = '/og-image.jpg',
   schema
 } = Astro.props;
@@ -21,7 +32,7 @@ const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "DownUnder Steuerberatung",
-  "description": "Steuerberatung für Deutsche in Australien — Tax Returns, Superannuation, TFN/ABN und individuelle Beratung.",
+  "description": "Tax consulting for Germans in Australia — Tax Returns, Superannuation, TFN/ABN and individual advice.",
   "url": "https://downunder-steuerberatung.com",
   "email": "hello@downunder-steuerberatung.com",
   "knowsLanguage": ["de", "en"],
@@ -30,10 +41,11 @@ const localBusinessSchema = {
 };
 
 const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : Astro.url;
+const siteUrl = Astro.site?.origin || 'https://downunder-steuerberatung.com';
 ---
 
 <!DOCTYPE html>
-<html lang="de">
+<html lang={locale}>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -45,6 +57,9 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : Astr
 
   <!-- SEO -->
   <link rel="canonical" href={canonicalURL} />
+  <link rel="alternate" hreflang="de" href={`${siteUrl}${locale === 'de' ? Astro.url.pathname : alternatePath}`} />
+  <link rel="alternate" hreflang="en" href={`${siteUrl}${locale === 'en' ? Astro.url.pathname : alternatePath}`} />
+  <link rel="alternate" hreflang="x-default" href={`${siteUrl}${locale === 'de' ? Astro.url.pathname : alternatePath}`} />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:type" content="website" />
@@ -61,7 +76,7 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : Astr
   {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
 </head>
 <body class="min-h-screen flex flex-col">
-  <a href="#main-content" class="skip-to-content">Zum Inhalt springen</a>
+  <a href="#main-content" class="skip-to-content">{skipLabels[locale]}</a>
   <Navigation />
   <main id="main-content" class="flex-1">
     <slot />

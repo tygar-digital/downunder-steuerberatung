@@ -1,0 +1,521 @@
+{
+  "meta": {
+    "home": {
+      "title": "Tax Advisory for Germans in Australia",
+      "description": "We specialise in tax returns and advisory services for Germans in Australia. Professional, easy to understand, 100% digital."
+    },
+    "leistungen": {
+      "title": "Services",
+      "description": "Tax expertise for Germans in Australia — Tax Returns, Superannuation, TFN/ABN and personalised advisory."
+    },
+    "ueberUns": {
+      "title": "About Us",
+      "description": "Meet the team behind DownUnder Steuerberatung — founded by German expats and Australians with tax advisory experience, for Germans in Australia."
+    },
+    "kontakt": {
+      "title": "Contact",
+      "description": "Get in touch with DownUnder Steuerberatung — we respond within 24 hours. Advisory for Germans in Australia."
+    }
+  },
+  "nav": {
+    "logoAlt": "DownUnder Logo",
+    "brandName": "DownUnder Steuerberatung",
+    "links": [
+      { "href": "/en/", "label": "Home" },
+      { "href": "/en/services", "label": "Services" },
+      { "href": "/en/about-us", "label": "About Us" }
+    ],
+    "ctaText": "Request a Consultation",
+    "ctaHref": "/en/contact",
+    "mobileMenuLabel": "Open menu"
+  },
+  "footer": {
+    "brandName": "DownUnder Steuerberatung",
+    "logoAlt": "DownUnder Logo",
+    "tagline": "Tax advisory for Germans in Australia. In German, stress-free — by expats, for expats.",
+    "sections": {
+      "services": {
+        "heading": "Services",
+        "links": [
+          { "href": "/en/services", "label": "Tax Returns" },
+          { "href": "/en/services", "label": "Superannuation" },
+          { "href": "/en/services", "label": "TFN & ABN" },
+          { "href": "/en/services", "label": "Tax Advisory" }
+        ]
+      },
+      "company": {
+        "heading": "Company",
+        "links": [
+          { "href": "/en/about-us", "label": "About Us" },
+          { "href": "/en/contact", "label": "Contact" }
+        ]
+      },
+      "contact": {
+        "heading": "Contact",
+        "email": "hello@downunder-steuerberatung.com"
+      },
+      "legal": {
+        "links": [
+          { "href": "/en/imprint", "label": "Imprint" },
+          { "href": "/en/privacy", "label": "Privacy Policy" }
+        ]
+      }
+    },
+    "copyright": "DownUnder Steuerberatung. All rights reserved."
+  },
+  "home": {
+    "hero": {
+      "headline": "Your Australian tax return — in German, stress-free.",
+      "subline": "We specialise in tax returns and advisory services for Germans in Australia. Professional, easy to understand, 100% digital.",
+      "ctaPrimary": {
+        "text": "Request a Consultation",
+        "href": "/en/contact"
+      },
+      "ctaSecondary": {
+        "text": "How It Works",
+        "href": "#prozess"
+      },
+      "trustBadges": [
+        "In German",
+        "100% Online",
+        "Finance Experts",
+        "Expats Ourselves"
+      ]
+    },
+    "about": {
+      "badge": "Who We Are",
+      "headline": "The bridge between German know-how and Australian tax law",
+      "text": "We are a team of German expats and Australian tax professionals with years of experience in Australian tax law. From first-hand experience, we know how confusing the Australian tax system can be — especially for German backpackers and expats. With our background in tax and accounting, we founded DownUnder Steuerberatung to provide exactly the support we wished we had back then.",
+      "visualText": "Germany → Australia"
+    },
+    "services": {
+      "badge": "Our Services",
+      "headline": "What we do for you",
+      "items": [
+        {
+          "title": "Tax Return",
+          "description": "Professional preparation of your Australian tax return."
+        },
+        {
+          "title": "Tax Advisory",
+          "description": "Personalised advice on tax obligations, double taxation and residency questions."
+        },
+        {
+          "title": "Accounting Advice for Backpackers",
+          "description": "Specifically for Working Holiday Visa holders — including guidance for contractors (ABN, invoicing, GST, etc.)"
+        }
+      ],
+      "linkText": "View all services",
+      "linkHref": "/en/services"
+    },
+    "process": {
+      "badge": "How It Works",
+      "headline": "Your tax return in 4 easy steps",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Initial Consultation",
+          "description": "Free initial assessment of your tax situation."
+        },
+        {
+          "number": "02",
+          "title": "Documents",
+          "description": "Secure upload for all relevant documents."
+        },
+        {
+          "number": "03",
+          "title": "Processing",
+          "description": "Our experts prepare your tax return."
+        },
+        {
+          "number": "04",
+          "title": "Refund",
+          "description": "Lodgement with the ATO and refund paid directly to your account."
+        }
+      ]
+    },
+    "faq": {
+      "badge": "FAQ",
+      "headline": "Quick answers to common questions",
+      "items": [
+        {
+          "question": "Do I have to pay tax in Australia as a German backpacker?",
+          "answer": "Yes. As soon as you work and earn income in Australia, you are generally liable to pay tax. Important: Even if your employer already withholds tax, you usually still need to lodge a tax return at the end of the financial year."
+        },
+        {
+          "question": "When do I need to lodge a tax return in Australia?",
+          "answer": "The Australian financial year runs from 1 July to 30 June. The deadline is 31 October, unless you use a registered Tax Agent — in which case extended deadlines apply."
+        },
+        {
+          "question": "Can I get overpaid tax back?",
+          "answer": "Often, yes. Backpackers in particular frequently overpay tax during the year because employers sometimes apply flat tax rates. With a correctly lodged tax return, you can claim back the overpaid amount. How much you get back depends on your income and individual circumstances."
+        },
+        {
+          "question": "Do I also have to pay tax in Germany?",
+          "answer": "That depends on your tax residency status. We review your situation and advise you on how to handle double taxation."
+        }
+      ]
+    },
+    "cta": {
+      "headline": "Ready for your tax return?",
+      "text": "Book a free initial consultation and find out whether — and how much — you may be entitled to as a refund.",
+      "buttonText": "Free Initial Consultation",
+      "buttonHref": "/en/contact"
+    }
+  },
+  "leistungen": {
+    "hero": {
+      "badge": "Our Services",
+      "headline": "Tax expertise for Germans in Australia",
+      "subline": "From straightforward tax returns to complex advisory — we cover all your tax needs.",
+      "image": "/images/leistungen-hero.webp",
+      "imageAlt": "Aerial view of Sydney Harbour with Opera House and skyline"
+    },
+    "services": [
+      {
+        "headline": "Australian Tax Returns",
+        "subline": "Support with your tax return — efficient and transparent",
+        "description": "We professionally prepare your Australian tax return in accordance with current ATO requirements. We ensure all relevant details are captured accurately and potential tax benefits are appropriately considered.",
+        "includes": [
+          "Structured recording of your income and potential deductible items",
+          "Electronic lodgement with the ATO",
+          "Processing and lodgement within less than 10 business days"
+        ],
+        "icon": "receipt",
+        "image": "/images/service-tax.webp",
+        "imageAlt": "Person signing tax documents"
+      },
+      {
+        "headline": "Superannuation Payout",
+        "subline": "Support with claiming your superannuation contributions",
+        "description": "When you leave Australia, you can claim your accumulated superannuation contributions via a DASP application. We help you through the process.",
+        "includes": [
+          "Assistance with lodging the DASP application",
+          "Transfer of funds to your nominated bank account"
+        ],
+        "icon": "piggybank",
+        "image": "/images/service-super.webp",
+        "imageAlt": "Plant growing from coins — symbol for growing savings"
+      },
+      {
+        "headline": "TFN & ABN Service",
+        "subline": "Get started quickly in Australia",
+        "description": "A Tax File Number (TFN) is essential for any employment in Australia, and as a self-employed contractor you may also need an Australian Business Number (ABN). We take care of the application process for you.",
+        "includes": [
+          "TFN application with the ATO",
+          "ABN registration for self-employed contractors",
+          "Review of your situation to determine whether additional registrations are required (e.g. GST)"
+        ],
+        "icon": "id",
+        "image": "/images/service-tfn.webp",
+        "imageAlt": "Traveller at the airport — a fresh start in Australia"
+      },
+      {
+        "headline": "Personalised Tax Advisory",
+        "subline": "Tailored advice for your individual situation",
+        "description": "Whether it's double taxation, tax residency or international income streams — our experts advise you individually and find the optimal solution.",
+        "includes": [
+          "Tax residency analysis",
+          "Double Taxation Agreement DE/AU",
+          "Advisory for expats & digital nomads"
+        ],
+        "icon": "compass",
+        "image": "/images/service-beratung.webp",
+        "imageAlt": "Successful tax consultation — two people in the office"
+      }
+    ],
+    "process": {
+      "badge": "Our Process",
+      "headline": "It's this easy",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Initial Assessment",
+          "description": "Tell us about your situation in a free initial consultation. We analyse your tax status and advise you on the next steps."
+        },
+        {
+          "number": "02",
+          "title": "Upload Documents",
+          "description": "Upload your documents securely via our portal. We tell you exactly which documents we need."
+        },
+        {
+          "number": "03",
+          "title": "Expert Processing",
+          "description": "Our certified tax advisors prepare your tax return and optimise your refund."
+        },
+        {
+          "number": "04",
+          "title": "Refund",
+          "description": "We lodge the documents with the ATO, and you receive your refund directly to your account."
+        }
+      ]
+    },
+    "cta": {
+      "headline": "Which service is right for you?",
+      "text": "Together, we'll find the best solution for your tax situation in Australia.",
+      "buttonText": "Free Initial Consultation",
+      "buttonHref": "/en/contact"
+    }
+  },
+  "ueberUns": {
+    "hero": {
+      "badge": "About Us",
+      "headline": "The bridge between two tax worlds",
+      "subline": "Founded by German expats and Australians with tax advisory experience — for Germans in Australia."
+    },
+    "story": {
+      "headline": "Our Story",
+      "paragraphs": [
+        "DownUnder Steuerberatung was born from the personal experience of one of our co-founders. When he moved from Germany to Australia, he discovered that the Australian tax system is complex, information in German is scarce, and professional help is hard to find.",
+        "With our background in tax and accounting, we decided to close exactly that gap. We offer the help we wished we had back then — easy to understand, digital, and in German."
+      ]
+    },
+    "differentiators": [
+      {
+        "title": "First-Hand Experience",
+        "description": "We know the challenges of being a German expat in Australia from personal experience."
+      },
+      {
+        "title": "Tax Expertise",
+        "description": "Our advisory is built on solid professional knowledge in tax and accounting."
+      },
+      {
+        "title": "100% Digital",
+        "description": "Fully digital process — whether you're in the city, at the beach, or in the Australian outback."
+      }
+    ],
+    "team": {
+      "headline": "The Founders",
+      "members": [
+        {
+          "name": "Josh",
+          "role": "Co-Founder",
+          "initials": "JD",
+          "description": "Josh has worked at accounting firms in Australia for over six years. He holds a Bachelor's degree in Business with a major in Accounting and recently became a member of Chartered Accountants Australia and New Zealand. He co-founded DownUnder Steuerberatung to help Germans navigate the Australian tax system."
+        },
+        {
+          "name": "Tim",
+          "role": "Co-Founder",
+          "initials": "TD",
+          "description": "Tim has worked in auditing in both Germany and Australia. As a German expat, he fulfilled his dream of travelling the world a few years ago and has lived in Australia since. He brings together practical experience and professional expertise, having initially navigated the challenges of cross-border taxation as a backpacker himself. Through DownUnder Steuerberatung, he now passes on valuable tax guidance to Germans in Australia."
+        }
+      ]
+    },
+    "certifications": {
+      "headline": "Our Standards",
+      "items": [
+        "Certified Tax Agent in Australia",
+        "Native German speakers",
+        "Fully digital process",
+        "Data protected under the Australian Privacy Act (1988)"
+      ]
+    },
+    "cta": {
+      "headline": "Get to know us",
+      "text": "Book a no-obligation initial consultation with our team.",
+      "buttonText": "Book a Consultation",
+      "buttonHref": "/en/contact"
+    }
+  },
+  "kontakt": {
+    "hero": {
+      "badge": "Contact",
+      "headline": "We look forward to hearing from you",
+      "subline": "Whether it's a question, a concern or an initial consultation — we aim to respond within 24 hours."
+    },
+    "form": {
+      "labels": {
+        "name": "Name",
+        "email": "Email",
+        "topic": "Subject",
+        "message": "Message"
+      },
+      "placeholders": {
+        "name": "Your full name",
+        "email": "your@email.com",
+        "topic": "Please choose a topic",
+        "message": "How can we help you?"
+      },
+      "topics": [
+        "Tax Return",
+        "Superannuation",
+        "TFN / ABN",
+        "Advisory",
+        "Other"
+      ],
+      "submitText": "Send Message",
+      "successText": "Message sent!",
+      "privacyNote": "We usually respond within 24 hours on business days. By submitting, you agree to our Privacy Policy.",
+      "privacyLinkText": "Privacy Policy",
+      "privacyLinkHref": "/en/privacy"
+    },
+    "directContact": {
+      "headline": "Reach us directly",
+      "email": {
+        "label": "Email",
+        "value": "hello@downunder-steuerberatung.com"
+      },
+      "whatsapp": {
+        "label": "WhatsApp",
+        "value": "Number coming soon"
+      },
+      "officeHours": {
+        "label": "Office Hours",
+        "value": "Mon–Fri, 9:00 AM–5:00 PM (AEST)"
+      }
+    },
+    "cta": {
+      "headline": "Prefer to talk directly?",
+      "text": "Book a free initial consultation via video call.",
+      "buttonText": "Book a Video Call",
+      "_note": "TODO: buttonHref should be a Cal.com scheduling link instead of /en/contact",
+      "buttonHref": "#cal-booking"
+    }
+  },
+  "datenschutz": {
+    "hero": {
+      "badge": "Legal",
+      "headline": "Privacy Policy"
+    },
+    "sections": [
+      {
+        "title": "1. Privacy at a Glance",
+        "content": [
+          {
+            "subtitle": "General Information",
+            "text": "The following information provides a simple overview of what happens to your personal data when you visit this website. Personal data is any data that can be used to personally identify you."
+          }
+        ]
+      },
+      {
+        "title": "2. Responsible Entity",
+        "content": [
+          {
+            "text": "The entity responsible for data processing on this website is:"
+          },
+          {
+            "address": [
+              "DownUnder Steuerberatung",
+              "[Address]",
+              "Email: hello@downunder-steuerberatung.com"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "3. Data Collection on This Website",
+        "content": [
+          {
+            "subtitle": "Contact Form",
+            "text": "When you submit an enquiry via our contact form, your details from the form — including the contact information you provide — are stored by us for the purpose of processing your request and in case of follow-up questions. We do not share this data without your consent."
+          },
+          {
+            "subtitle": "Server Log Files",
+            "text": "The hosting provider of this website automatically collects and stores information in server log files, which your browser transmits automatically. These include: browser type and version, operating system, referrer URL, hostname of the accessing device, time of the server request, and IP address."
+          }
+        ]
+      },
+      {
+        "title": "4. Hosting",
+        "content": [
+          {
+            "text": "This website is hosted by an external service provider (host). The personal data collected on this website is stored on the host's servers. This may include IP addresses, contact enquiries, meta and communication data, contractual data, contact details, names, website access logs, and other data generated via a website."
+          }
+        ]
+      },
+      {
+        "title": "5. Your Rights",
+        "content": [
+          {
+            "text": "You have the right at any time to obtain free information about the origin, recipients and purpose of your stored personal data. You also have the right to request the correction or deletion of this data."
+          },
+          {
+            "list": [
+              "Right of access (Art. 15 GDPR)",
+              "Right to rectification (Art. 16 GDPR)",
+              "Right to erasure (Art. 17 GDPR)",
+              "Right to restriction of processing (Art. 18 GDPR)",
+              "Right to data portability (Art. 20 GDPR)",
+              "Right to object (Art. 21 GDPR)"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "6. Analytics Tools & Cookies",
+        "content": [
+          {
+            "text": "This website currently does not use any analytics tools or tracking cookies. Should this change, we will update this privacy policy accordingly and ask for your consent before activation."
+          }
+        ]
+      }
+    ],
+    "footer": "As of April 2026. This privacy policy is updated regularly."
+  },
+  "impressum": {
+    "hero": {
+      "badge": "Legal",
+      "headline": "Legal Notice"
+    },
+    "introNote": "Information pursuant to § 5 TMG (German Telemedia Act)",
+    "sections": [
+      {
+        "title": "Company Name",
+        "content": [
+          "DownUnder Steuerberatung",
+          "[Full company name to be added]"
+        ]
+      },
+      {
+        "title": "Address",
+        "content": [
+          "[Street and house number]",
+          "[Postcode and city]",
+          "Germany"
+        ]
+      },
+      {
+        "title": "Contact",
+        "content": [
+          "Email: hello@downunder-steuerberatung.com",
+          "Phone: [Phone number]"
+        ]
+      },
+      {
+        "title": "Represented By",
+        "content": [
+          "[Name of managing director / owner]"
+        ]
+      },
+      {
+        "title": "Commercial Register",
+        "content": [
+          "Registry court: [Local court]",
+          "Registration number: [HRB number]"
+        ]
+      },
+      {
+        "title": "VAT ID",
+        "content": [
+          "VAT identification number pursuant to § 27a of the German VAT Act (UStG):",
+          "[VAT ID No.]"
+        ]
+      },
+      {
+        "title": "Professional Title & Supervisory Authority",
+        "content": [
+          "Professional title: Tax Advisor (Steuerberater)",
+          "Competent chamber: [Chamber of Tax Advisors]",
+          "Awarded in: Germany"
+        ]
+      },
+      {
+        "title": "Dispute Resolution",
+        "content": [
+          "The European Commission provides a platform for online dispute resolution (ODR).",
+          "We are neither willing nor obliged to participate in dispute resolution proceedings before a consumer arbitration board."
+        ]
+      }
+    ]
+  }
+}

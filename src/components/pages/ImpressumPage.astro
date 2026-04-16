@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+interface Props {
+  content: any;
+  locale: string;
+}
+
+const { content, locale } = Astro.props;
+const page = content.impressum;
+---
+
+<BaseLayout title={page.hero.headline}>
+  <!-- Page Hero -->
+  <section class="py-16 md:py-20" style="background: var(--gradient-hero);">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8">
+      <p class="text-sm font-medium mb-3 uppercase tracking-wider" style="color: var(--color-primary-fixed-dim); font-family: var(--font-display);">
+        {page.hero.badge}
+      </p>
+      <h1 class="text-white">{page.hero.headline}</h1>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="py-16 md:py-24" style="background-color: var(--color-background);">
+    <div class="mx-auto max-w-3xl px-5 sm:px-8">
+      <div
+        class="p-8 md:p-12 rounded-[var(--radius-lg)]"
+        style="background-color: var(--color-surface-lowest); box-shadow: var(--shadow-ambient);"
+      >
+        {page.introNote && (
+          <h2 class="text-xl mb-6" style="font-family: var(--font-display);">{page.introNote}</h2>
+        )}
+
+        <div class="space-y-8 text-[var(--color-on-surface-variant)]">
+          {page.sections.map((section: any) => (
+            <div>
+              <h3 class="text-base font-semibold mb-2" style="color: var(--color-on-surface); font-family: var(--font-display);">
+                {section.title}
+              </h3>
+              {section.content.map((line: string) => (
+                <p class="text-sm leading-relaxed">{line}</p>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
