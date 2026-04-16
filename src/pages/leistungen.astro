@@ -10,10 +10,17 @@ const steps = content.leistungen.process.steps;
 
   <!-- ===== HERO ===== -->
   <section class="relative overflow-hidden py-20 md:py-28" style="background: var(--gradient-hero);">
-    <!-- Subtle decorative element -->
-    <div class="absolute top-0 right-0 w-[500px] h-[500px] opacity-[0.04] pointer-events-none" style="background: radial-gradient(circle, white 0%, transparent 70%);"></div>
+    <!-- Background image -->
+    <div class="absolute inset-0">
+      <img
+        src={content.leistungen.hero.image}
+        alt={content.leistungen.hero.imageAlt}
+        class="w-full h-full object-cover opacity-[0.15]"
+        loading="eager"
+      />
+    </div>
 
-    <div class="mx-auto max-w-7xl px-5 sm:px-8">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8 relative z-10">
       <div class="max-w-3xl">
         <span
           class="inline-block text-xs font-semibold uppercase tracking-[0.15em] mb-5 px-3.5 py-1.5 rounded-[var(--radius-full)]"
@@ -103,54 +110,61 @@ const steps = content.leistungen.process.steps;
           <!-- Visual Card -->
           <div class:list={[i % 2 !== 0 && 'lg:order-1']}>
             <div
-              class="relative rounded-[var(--radius-xl)] overflow-hidden aspect-[4/3]"
-              style={`background-color: var(--color-surface-lowest); box-shadow: var(--shadow-ambient);`}
+              class="relative rounded-[var(--radius-xl)] aspect-[4/3] p-3 md:p-4"
+              style="background-color: var(--color-surface-lowest); box-shadow: var(--shadow-ambient);"
             >
-              <!-- Abstract decorative pattern -->
-              <div class="absolute inset-0 flex items-center justify-center">
-                <div class="relative w-full h-full">
-                  <!-- Gradient accent -->
-                  <div
-                    class="absolute top-8 left-8 right-8 bottom-8 rounded-[var(--radius-lg)] opacity-[0.06]"
-                    style="background: var(--gradient-primary);"
-                  ></div>
-                  <!-- Centered large icon -->
-                  <div class="absolute inset-0 flex items-center justify-center">
-                    <div
-                      class="w-24 h-24 md:w-32 md:h-32 rounded-[var(--radius-xl)] flex items-center justify-center"
-                      style="background: var(--gradient-primary);"
-                    >
-                      {service.icon === 'receipt' && (
-                        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12 md:w-14 md:h-14">
-                          <path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z" />
-                          <path d="M8 10h8" /><path d="M8 14h4" />
-                        </svg>
-                      )}
-                      {service.icon === 'piggybank' && (
-                        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12 md:w-14 md:h-14">
-                          <path d="M19 5c-1.5 0-2.8 1.4-3 2-3.5-1.4-11-.3-11 5 0 1.8 0 3 2 4.5V20h4v-2h3v2h4v-4c1-.5 1.7-1 2-2h2v-4h-2c0-1-.5-1.5-1-2" />
-                          <path d="M2 9.5l1.5 1" /><circle cx="15.5" cy="9.5" r="0.5" fill="rgba(255,255,255,0.85)" />
-                        </svg>
-                      )}
-                      {service.icon === 'id' && (
-                        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12 md:w-14 md:h-14">
-                          <rect x="2" y="5" width="20" height="14" rx="2" />
-                          <circle cx="8" cy="12" r="2" /><path d="M14 10h4" /><path d="M14 14h2" />
-                        </svg>
-                      )}
-                      {service.icon === 'compass' && (
-                        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12 md:w-14 md:h-14">
-                          <circle cx="12" cy="12" r="10" />
-                          <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.85)" />
-                        </svg>
-                      )}
+              <!-- Inner image area -->
+              <div class="relative w-full h-full rounded-[var(--radius-lg)] overflow-hidden">
+                <!-- Background image -->
+                <img
+                  src={service.image}
+                  alt={service.imageAlt}
+                  class="absolute inset-0 w-full h-full object-cover"
+                  loading="lazy"
+                />
+                <!-- Blue gradient overlay -->
+                <div class="absolute inset-0" style="background: var(--gradient-hero); opacity: 0.82;"></div>
+                <!-- Icon + decorative elements -->
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="relative w-full h-full">
+                    <!-- Centered large icon -->
+                    <div class="absolute inset-0 flex items-center justify-center">
+                      <div
+                        class="w-24 h-24 md:w-32 md:h-32 rounded-[var(--radius-xl)] flex items-center justify-center"
+                        style="background: rgba(255,255,255,0.1); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.12);"
+                      >
+                        {service.icon === 'receipt' && (
+                          <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12 md:w-14 md:h-14">
+                            <path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z" />
+                            <path d="M8 10h8" /><path d="M8 14h4" />
+                          </svg>
+                        )}
+                        {service.icon === 'piggybank' && (
+                          <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12 md:w-14 md:h-14">
+                            <path d="M19 5c-1.5 0-2.8 1.4-3 2-3.5-1.4-11-.3-11 5 0 1.8 0 3 2 4.5V20h4v-2h3v2h4v-4c1-.5 1.7-1 2-2h2v-4h-2c0-1-.5-1.5-1-2" />
+                            <path d="M2 9.5l1.5 1" /><circle cx="15.5" cy="9.5" r="0.5" fill="rgba(255,255,255,0.85)" />
+                          </svg>
+                        )}
+                        {service.icon === 'id' && (
+                          <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12 md:w-14 md:h-14">
+                            <rect x="2" y="5" width="20" height="14" rx="2" />
+                            <circle cx="8" cy="12" r="2" /><path d="M14 10h4" /><path d="M14 14h2" />
+                          </svg>
+                        )}
+                        {service.icon === 'compass' && (
+                          <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12 md:w-14 md:h-14">
+                            <circle cx="12" cy="12" r="10" />
+                            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.85)" />
+                          </svg>
+                        )}
+                      </div>
                     </div>
-                  </div>
-                  <!-- Decorative dots -->
-                  <div class="absolute bottom-6 right-6 grid grid-cols-3 gap-2 opacity-[0.08]">
-                    {Array(9).fill(0).map(() => (
-                      <div class="w-2 h-2 rounded-full" style="background-color: var(--color-primary);"></div>
-                    ))}
+                    <!-- Decorative dots -->
+                    <div class="absolute bottom-4 right-4 grid grid-cols-3 gap-2 opacity-[0.15]">
+                      {Array(9).fill(0).map(() => (
+                        <div class="w-2 h-2 rounded-full bg-white"></div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>

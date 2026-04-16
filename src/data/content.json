@@ -167,7 +167,9 @@
     "hero": {
       "badge": "Unsere Leistungen",
       "headline": "Steuerliche Expertise für Deutsche in Australien",
-      "subline": "Von der einfachen Steuererklärung bis zur komplexen Beratung — wir decken alle steuerlichen Bedürfnisse ab."
+      "subline": "Von der einfachen Steuererklärung bis zur komplexen Beratung — wir decken alle steuerlichen Bedürfnisse ab.",
+      "image": "/images/leistungen-hero.webp",
+      "imageAlt": "Luftaufnahme von Sydney Harbour mit Opera House und Skyline"
     },
     "services": [
       {
@@ -179,7 +181,9 @@
           "Elektronische Einreichung (Lodgement) beim ATO",
           "Bearbeitung und Einreichung innerhalb von weniger als 10 Werktagen"
         ],
-        "icon": "receipt"
+        "icon": "receipt",
+        "image": "/images/service-tax.webp",
+        "imageAlt": "Person unterschreibt Steuerdokumente"
       },
       {
         "headline": "Superannuation Auszahlung",
@@ -189,7 +193,9 @@
           "Unterstützung bei der Einreichung des DASP-Antrags",
           "Überweisung der Gelder auf dein angegebenes Bankkonto"
         ],
-        "icon": "piggybank"
+        "icon": "piggybank",
+        "image": "/images/service-super.webp",
+        "imageAlt": "Pflanze wächst aus Münzen — Symbol für wachsende Ersparnisse"
       },
       {
         "headline": "TFN & ABN Service",
@@ -200,7 +206,9 @@
           "ABN-Registrierung für Selbständige (Contractor)",
           "Prüfung deiner Situation, um festzustellen, ob weitere Registrierungen erforderlich sind (z. B. Umsatzsteuer)"
         ],
-        "icon": "id"
+        "icon": "id",
+        "image": "/images/service-tfn.webp",
+        "imageAlt": "Reisender am Flughafen — Neustart in Australien"
       },
       {
         "headline": "Individuelle Steuerberatung",
@@ -211,7 +219,9 @@
           "Doppelbesteuerungsabkommen DE/AU",
           "Beratung für Expats & Digital Nomads"
         ],
-        "icon": "compass"
+        "icon": "compass",
+        "image": "/images/service-beratung.webp",
+        "imageAlt": "Erfolgreiche Steuerberatung — zwei Personen im Büro"
       }
     ],
     "process": {
