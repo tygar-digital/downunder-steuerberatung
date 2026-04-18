@@ -20,6 +20,8 @@ const steps = content.leistungen.process.steps;
       <img
         src={content.leistungen.hero.image}
         alt={content.leistungen.hero.imageAlt}
+        width="1400"
+        height="933"
         class="w-full h-full object-cover opacity-[0.15]"
         loading="eager"
       />
@@ -124,6 +126,8 @@ const steps = content.leistungen.process.steps;
                 <img
                   src={service.image}
                   alt={service.imageAlt}
+                  width="800"
+                  height="533"
                   class="absolute inset-0 w-full h-full object-cover"
                   loading="lazy"
                 />
@@ -235,7 +239,7 @@ const steps = content.leistungen.process.steps;
         </p>
         <a
           href={content.leistungen.cta.buttonHref}
-          class="inline-flex items-center gap-2.5 px-8 py-4 rounded-[var(--radius-xl)] text-base font-semibold transition-all duration-200 hover:shadow-[var(--shadow-elevated)] hover:scale-[1.02]"
+          class="inline-flex items-center gap-2.5 px-8 py-4 rounded-[var(--radius-xl)] text-base font-semibold transition-[box-shadow,transform] duration-200 hover:shadow-[var(--shadow-elevated)] hover:scale-[1.02]"
           style="background: var(--color-secondary-container); color: var(--color-on-secondary-container);"
         >
           {content.leistungen.cta.buttonText}

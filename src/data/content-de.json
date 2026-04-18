@@ -2,7 +2,7 @@
   "meta": {
     "home": {
       "title": "Steuerberatung für Deutsche in Australien",
-      "description": "Wir sind spezialisiert auf Steuererklärungen und Beratung für Deutsche in Australien. Professionell, verständlich, 100% digital."
+      "description": "Wir sind spezialisiert auf Steuererklärungen und Beratung für Deutsche in Australien. Professionell, verständlich, 100\u00a0% digital."
     },
     "leistungen": {
       "title": "Leistungen",
@@ -66,18 +66,18 @@
   "home": {
     "hero": {
       "headline": "Deine Steuererklärung in Australien — auf Deutsch, ohne Stress.",
-      "subline": "Wir sind spezialisiert auf Steuererklärungen und Beratung für Deutsche in Australien. Professionell, verständlich, 100% digital.",
+      "subline": "Wir sind spezialisiert auf Steuererklärungen und Beratung für Deutsche in Australien. Professionell, verständlich, 100\u00a0% digital.",
       "ctaPrimary": {
         "text": "Jetzt Beratung anfragen",
         "href": "/kontakt"
       },
       "ctaSecondary": {
-        "text": "So funktioniert's",
+        "text": "So funktioniert\u2019s",
         "href": "#prozess"
       },
       "trustBadges": [
         "Auf Deutsch",
-        "100% Online",
+        "100\u00a0% Online",
         "Finance-Experten",
         "Selbst Expats"
       ]
@@ -86,6 +86,8 @@
       "badge": "Wer wir sind",
       "headline": "Die Brücke zwischen deutschem Know-how und australischem Steuerrecht",
       "text": "Wir sind ein Team aus deutschen Auswanderern und australischen Steuerexperten mit langjähriger Erfahrung im australischen Steuerrecht. Aus eigener Erfahrung wissen wir, wie verwirrend das australische Steuersystem gerade für Deutsche Backpacker und Expats sein kann. Mit unserem Background in Steuern und Accounting haben wir DownUnder Steuerberatung gegründet, um genau die Unterstützung zu bieten, die wir uns damals selbst gewünscht hätten.",
+      "image": "/images/beach-travelers.webp",
+      "imageAlt": "Junge Reisende lachen zusammen am australischen Strand",
       "visualText": "Deutschland → Australien"
     },
     "services": {
@@ -109,7 +111,7 @@
       "linkHref": "/leistungen"
     },
     "process": {
-      "badge": "So funktioniert's",
+      "badge": "So funktioniert\u2019s",
       "headline": "In 4 Schritten zur Steuererklärung",
       "steps": [
         {
@@ -226,7 +228,7 @@
     ],
     "process": {
       "badge": "Unser Prozess",
-      "headline": "So einfach geht's",
+      "headline": "So einfach geht\u2019s",
       "steps": [
         {
           "number": "01",
@@ -261,7 +263,9 @@
     "hero": {
       "badge": "Über uns",
       "headline": "Die Brücke zwischen zwei Steuerwelten",
-      "subline": "Gegründet von deutschen Expats und Australiern mit Erfahrung in der Steuerberatung – für Deutsche in Australien."
+      "subline": "Gegründet von deutschen Expats und Australiern mit Erfahrung in der Steuerberatung – für Deutsche in Australien.",
+      "image": "/images/leistungen-hero.webp",
+      "imageAlt": "Luftaufnahme von Sydney Harbour mit Opera House und Skyline"
     },
     "story": {
       "headline": "Unsere Geschichte",

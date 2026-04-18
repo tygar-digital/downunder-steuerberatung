@@ -86,6 +86,8 @@
       "badge": "Who We Are",
       "headline": "The bridge between German know-how and Australian tax law",
       "text": "We are a team of German expats and Australian tax professionals with years of experience in Australian tax law. From first-hand experience, we know how confusing the Australian tax system can be — especially for German backpackers and expats. With our background in tax and accounting, we founded DownUnder Steuerberatung to provide exactly the support we wished we had back then.",
+      "image": "/images/beach-travelers.webp",
+      "imageAlt": "Young travellers laughing together on an Australian beach",
       "visualText": "Germany → Australia"
     },
     "services": {
@@ -213,7 +215,7 @@
       {
         "headline": "Personalised Tax Advisory",
         "subline": "Tailored advice for your individual situation",
-        "description": "Whether it's double taxation, tax residency or international income streams — our experts advise you individually and find the optimal solution.",
+        "description": "Whether it\u2019s double taxation, tax residency or international income streams — our experts advise you individually and find the optimal solution.",
         "includes": [
           "Tax residency analysis",
           "Double Taxation Agreement DE/AU",
@@ -226,7 +228,7 @@
     ],
     "process": {
       "badge": "Our Process",
-      "headline": "It's this easy",
+      "headline": "It\u2019s this easy",
       "steps": [
         {
           "number": "01",
@@ -261,7 +263,9 @@
     "hero": {
       "badge": "About Us",
       "headline": "The bridge between two tax worlds",
-      "subline": "Founded by German expats and Australians with tax advisory experience — for Germans in Australia."
+      "subline": "Founded by German expats and Australians with tax advisory experience — for Germans in Australia.",
+      "image": "/images/leistungen-hero.webp",
+      "imageAlt": "Aerial view of Sydney Harbour with Opera House and skyline"
     },
     "story": {
       "headline": "Our Story",
@@ -291,7 +295,7 @@
           "name": "Josh",
           "role": "Co-Founder",
           "initials": "JD",
-          "description": "Josh has worked at accounting firms in Australia for over six years. He holds a Bachelor's degree in Business with a major in Accounting and recently became a member of Chartered Accountants Australia and New Zealand. He co-founded DownUnder Steuerberatung to help Germans navigate the Australian tax system."
+          "description": "Josh has worked at accounting firms in Australia for over six years. He holds a Bachelor\u2019s degree in Business with a major in Accounting and recently became a member of Chartered Accountants Australia and New Zealand. He co-founded DownUnder Steuerberatung to help Germans navigate the Australian tax system."
         },
         {
           "name": "Tim",
@@ -321,7 +325,7 @@
     "hero": {
       "badge": "Contact",
       "headline": "We look forward to hearing from you",
-      "subline": "Whether it's a question, a concern or an initial consultation — we aim to respond within 24 hours."
+      "subline": "Whether it\u2019s a question, a concern or an initial consultation — we aim to respond within 24 hours."
     },
     "form": {
       "labels": {

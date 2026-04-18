@@ -10,14 +10,14 @@ const homeHref = locale === 'en' ? '/en/' : '/';
 ---
 
 <header
-  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+  class="fixed top-0 left-0 right-0 z-50 transition-colors transition-shadow duration-300"
   id="main-nav"
 >
   <div class="mx-auto max-w-7xl px-5 sm:px-8">
     <nav class="flex items-center justify-between h-20">
       <!-- Logo -->
-      <a href={homeHref} class="flex items-center gap-2 group">
-        <img src="/logo.svg" alt={logoAlt} class="h-10 w-auto" />
+      <a href={homeHref} class="flex items-center gap-2 group" translate="no">
+        <img src="/logo.svg" alt={logoAlt} width="40" height="40" class="h-10 w-auto" />
         <span class="font-bold text-lg" style="font-family: var(--font-display); color: var(--color-on-surface);">
           {brandName}
         </span>
@@ -47,7 +47,7 @@ const homeHref = locale === 'en' ? '/en/' : '/';
         </div>
         <a
           href={ctaHref}
-          class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-[var(--radius-xl)] text-sm font-semibold transition-all duration-200 hover:shadow-[var(--shadow-float)]"
+          class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-[var(--radius-xl)] text-sm font-semibold transition-shadow duration-200 hover:shadow-[var(--shadow-float)]"
           style="background: var(--color-secondary-container); color: var(--color-on-secondary-container);"
         >
           {ctaText}
@@ -59,11 +59,12 @@ const homeHref = locale === 'en' ? '/en/' : '/';
           class="md:hidden flex items-center justify-center w-11 h-11"
           aria-label={mobileMenuLabel}
           aria-expanded="false"
+          aria-controls="mobile-menu"
         >
-          <svg id="icon-menu" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="color: var(--color-on-surface);">
+          <svg id="icon-menu" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="color: var(--color-on-surface);" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
-          <svg id="icon-close" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="color: var(--color-on-surface);">
+          <svg id="icon-close" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="color: var(--color-on-surface);" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M6 18L18 6" />
           </svg>
         </button>
@@ -74,14 +75,14 @@ const homeHref = locale === 'en' ? '/en/' : '/';
   <!-- Mobile Menu -->
   <div
     id="mobile-menu"
-    class="md:hidden overflow-hidden transition-all duration-300 max-h-0 opacity-0"
+    class="md:hidden overflow-hidden transition-[max-height,opacity] duration-300 max-h-0 opacity-0"
   >
     <div class="px-5 pb-6 pt-2 flex flex-col gap-1">
       {navLinks.map((link) => (
         <a
           href={link.href}
           class:list={[
-            'block px-4 py-3 rounded-[var(--radius-md)] text-base font-medium transition-colors duration-200',
+            'mobile-link block px-4 py-3 rounded-[var(--radius-md)] text-base font-medium transition-colors duration-200',
             (currentPath === link.href.replace(/\/$/, '') || currentPath === link.href)
               ? 'text-[var(--color-primary)] bg-[var(--color-primary-fixed)]'
               : 'text-[var(--color-on-surface-variant)] hover:bg-[var(--color-surface-low)]'
@@ -95,7 +96,7 @@ const homeHref = locale === 'en' ? '/en/' : '/';
       </div>
       <a
         href={ctaHref}
-        class="mt-3 flex items-center justify-center px-5 py-3 rounded-[var(--radius-xl)] text-base font-semibold transition-all duration-200"
+        class="mobile-link mt-3 flex items-center justify-center px-5 py-3 rounded-[var(--radius-xl)] text-base font-semibold transition-shadow duration-200"
         style="background: var(--color-secondary-container); color: var(--color-on-secondary-container);"
       >
         {ctaText}
@@ -105,24 +106,28 @@ const homeHref = locale === 'en' ? '/en/' : '/';
 </header>
 
 <!-- Spacer for fixed nav -->
-<div class="h-20"></div>
+<div class="h-20" aria-hidden="true"></div>
+
+<style>
+  #main-nav.is-scrolled {
+    background-color: rgba(250, 250, 245, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 1px 0 rgba(195, 198, 209, 0.15);
+  }
+  #main-nav.is-menu-open {
+    background-color: rgba(250, 250, 245, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+</style>
 
 <script>
   const nav = document.getElementById('main-nav')!;
   const scrollThreshold = 20;
 
   function updateNav() {
-    if (window.scrollY > scrollThreshold) {
-      nav.style.backgroundColor = 'rgba(250, 250, 245, 0.85)';
-      nav.style.backdropFilter = 'blur(20px)';
-      nav.style.webkitBackdropFilter = 'blur(20px)';
-      nav.style.boxShadow = '0 1px 0 rgba(195, 198, 209, 0.15)';
-    } else {
-      nav.style.backgroundColor = 'transparent';
-      nav.style.backdropFilter = 'none';
-      nav.style.webkitBackdropFilter = 'none';
-      nav.style.boxShadow = 'none';
-    }
+    nav.classList.toggle('is-scrolled', window.scrollY > scrollThreshold);
   }
 
   window.addEventListener('scroll', updateNav, { passive: true });
@@ -132,26 +137,39 @@ const homeHref = locale === 'en' ? '/en/' : '/';
   const menu = document.getElementById('mobile-menu')!;
   const iconMenu = document.getElementById('icon-menu')!;
   const iconClose = document.getElementById('icon-close')!;
+  const mobileLinks = menu.querySelectorAll<HTMLAnchorElement>('.mobile-link');
   let isOpen = false;
 
-  toggle.addEventListener('click', () => {
-    isOpen = !isOpen;
-    toggle.setAttribute('aria-expanded', String(isOpen));
+  function setOpen(open: boolean) {
+    isOpen = open;
+    toggle.setAttribute('aria-expanded', String(open));
+    nav.classList.toggle('is-menu-open', open);
 
-    if (isOpen) {
+    if (open) {
       menu.style.maxHeight = menu.scrollHeight + 'px';
       menu.style.opacity = '1';
       iconMenu.classList.add('hidden');
       iconClose.classList.remove('hidden');
-      nav.style.backgroundColor = 'rgba(250, 250, 245, 0.95)';
-      nav.style.backdropFilter = 'blur(20px)';
-      nav.style.webkitBackdropFilter = 'blur(20px)';
+      document.body.style.overflow = 'hidden';
     } else {
       menu.style.maxHeight = '0';
       menu.style.opacity = '0';
       iconMenu.classList.remove('hidden');
       iconClose.classList.add('hidden');
-      updateNav();
+      document.body.style.overflow = '';
     }
+  }
+
+  toggle.addEventListener('click', () => setOpen(!isOpen));
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && isOpen) {
+      setOpen(false);
+      toggle.focus();
+    }
+  });
+
+  mobileLinks.forEach((link) => {
+    link.addEventListener('click', () => setOpen(false));
   });
 </script>

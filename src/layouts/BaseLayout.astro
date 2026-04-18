@@ -79,7 +79,7 @@ const siteUrl = Astro.site?.origin || 'https://downunder-steuerberatung.com';
 <body class="min-h-screen flex flex-col">
   <a href="#main-content" class="skip-to-content">{skipLabels[locale]}</a>
   <Navigation />
-  <main id="main-content" class="flex-1">
+  <main id="main-content" class="flex-1" tabindex="-1">
     <slot />
   </main>
   <Footer />

@@ -110,6 +110,8 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
   letter-spacing: -0.02em;
   line-height: 1.15;
+  text-wrap: balance;
+  scroll-margin-top: 6rem;
 }
 
 /* Fluid Typography */
@@ -117,6 +119,10 @@ h1 { font-size: clamp(2.25rem, 5vw, 3.5rem); font-weight: 800; }
 h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 700; }
 h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 600; }
 h4 { font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 600; }
+
+p { text-wrap: pretty; }
+
+.tabular-nums { font-variant-numeric: tabular-nums; }
 
 p { font-size: 1rem; line-height: 1.7; }
 
@@ -132,6 +138,19 @@ a:hover {
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* Selection */

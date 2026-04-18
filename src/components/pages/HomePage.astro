@@ -32,6 +32,8 @@ const faqSchema = {
       <img
         src="/images/hero-sydney.webp"
         alt=""
+        width="1920"
+        height="1281"
         class="w-full h-full object-cover"
         loading="eager"
         fetchpriority="high"
@@ -58,14 +60,14 @@ const faqSchema = {
         <div class="flex flex-col sm:flex-row gap-4 mb-14">
           <a
             href={home.hero.ctaPrimary.href}
-            class="inline-flex items-center justify-center px-7 py-3.5 rounded-[var(--radius-xl)] text-base font-semibold transition-all duration-200 hover:brightness-105 hover:shadow-lg"
+            class="inline-flex items-center justify-center px-7 py-3.5 rounded-[var(--radius-xl)] text-base font-semibold transition-[filter,box-shadow] duration-200 hover:brightness-105 hover:shadow-lg"
             style="background-color: var(--color-secondary-container); color: var(--color-on-secondary-container);"
           >
             {home.hero.ctaPrimary.text}
           </a>
           <a
             href={home.hero.ctaSecondary.href}
-            class="inline-flex items-center justify-center px-7 py-3.5 rounded-[var(--radius-xl)] text-base font-semibold transition-all duration-200 hover:bg-white/10"
+            class="inline-flex items-center justify-center px-7 py-3.5 rounded-[var(--radius-xl)] text-base font-semibold transition-colors duration-200 hover:bg-white/10"
             style="border: 1.5px solid rgba(255,255,255,0.35); color: white;"
           >
             {home.hero.ctaSecondary.text}
@@ -128,8 +130,10 @@ const faqSchema = {
             <div class="aspect-[4/3] rounded-[var(--radius-xl)] overflow-hidden relative">
               <!-- Background photo -->
               <img
-                src="/images/beach-travelers.webp"
-                alt="Junge Reisende lachen zusammen am australischen Strand"
+                src={home.about.image}
+                alt={home.about.imageAlt}
+                width="2400"
+                height="1792"
                 class="absolute inset-0 w-full h-full object-cover"
                 loading="eager"
               />
@@ -299,8 +303,9 @@ const faqSchema = {
         {home.process.steps.map((step) => (
           <div class="relative">
             <div
-              class="text-5xl lg:text-6xl font-extrabold mb-4 leading-none"
+              class="text-5xl lg:text-6xl font-extrabold mb-4 leading-none tabular-nums"
               style="color: var(--color-primary); opacity: 0.12; font-family: var(--font-display);"
+              aria-hidden="true"
             >{step.number}</div>
             <h3 class="mb-2" style="color: var(--color-primary); font-family: var(--font-display);">{step.title}</h3>
             <p class="leading-relaxed" style="color: var(--color-on-surface-variant); font-family: var(--font-body);">
@@ -329,21 +334,29 @@ const faqSchema = {
       </div>
 
       <div class="max-w-3xl space-y-3">
-        {content.home.faq.items.map((item) => (
+        {content.home.faq.items.map((item, i) => (
           <div
             class="faq-item rounded-[var(--radius-lg)] overflow-hidden transition-shadow duration-200"
             style="background-color: var(--color-surface-lowest); box-shadow: var(--shadow-float);"
           >
             <button
+              id={`faq-trigger-${i}`}
               class="faq-trigger w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer"
               aria-expanded="false"
+              aria-controls={`faq-panel-${i}`}
             >
               <span class="text-base font-semibold" style="color: var(--color-on-surface); font-family: var(--font-display);">
                 {item.question}
               </span>
-              <svg class="faq-chevron shrink-0 w-5 h-5 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="var(--color-on-surface-variant)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+              <svg class="faq-chevron shrink-0 w-5 h-5 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="var(--color-on-surface-variant)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
             </button>
-            <div class="faq-content" style="max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s ease;">
+            <div
+              id={`faq-panel-${i}`}
+              role="region"
+              aria-labelledby={`faq-trigger-${i}`}
+              class="faq-content"
+              style="max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s ease;"
+            >
               <div class="px-6 pb-6">
                 <p class="leading-relaxed" style="color: var(--color-on-surface-variant); font-family: var(--font-body);">
                   {item.answer}
@@ -364,6 +377,8 @@ const faqSchema = {
       <img
         src="/images/cta-sydney.webp"
         alt=""
+        width="1600"
+        height="2133"
         class="w-full h-full object-cover"
         loading="lazy"
       />
@@ -384,7 +399,7 @@ const faqSchema = {
       </p>
       <a
         href={home.cta.buttonHref}
-        class="inline-flex items-center justify-center px-8 py-4 rounded-[var(--radius-xl)] text-lg font-semibold transition-all duration-200 hover:brightness-105 hover:shadow-lg"
+        class="inline-flex items-center justify-center px-8 py-4 rounded-[var(--radius-xl)] text-lg font-semibold transition-[filter,box-shadow] duration-200 hover:brightness-105 hover:shadow-lg"
         style="background-color: var(--color-secondary-container); color: var(--color-on-secondary-container);"
       >
         {home.cta.buttonText}
